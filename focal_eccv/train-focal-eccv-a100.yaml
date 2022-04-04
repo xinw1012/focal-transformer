@@ -1,0 +1,102 @@
+description: train clip model on google cc and sbu
+
+target:
+  service: sing
+  name: msrredmondvc
+
+environment:
+  image: amlt-sing/deepspeed-0.4-pytorch-1.9.0-cuda11.3-a100
+
+storage:
+  test_data_storage:
+    storage_account_name: vlpdatasets
+    container_name: data
+  # output_storage:
+  #   storage_account_name: projects4jw
+  #   container_name: phillytools
+
+code:
+  # local directory of the code. this will be uploaded to the server.
+  # $CONFIG_DIR is expanded to the directory of this config file
+  local_dir: ./
+
+search:
+  job_template:
+    name: train_{model_type}_{model_size}_{lr}_{focal_levels}_{focal_windows}_{focal_factors}_{focal_strides}_pool{pool_method}_conv{use_conv_embed}
+    sku: 4xG8
+    aml_mpirun:
+      process_count_per_node: 1
+      # AML only supports: OpenMpi or IntelMpi
+      communicator: "OpenMpi"
+    command:
+    - ulimit -n 4096
+    - pip install timm==0.4.12 antialiased-cnns bcolz ftfy regex tqdm einops
+    # - git clone https://github.com/NVIDIA/apex.git & cd apex & python setup.py install --cuda_ext --cpp_ext --user & cd ..
+    - pip install opencv-python==4.4.0.46 termcolor==1.1.0 yacs==0.1.8
+    - export MKL_SERVICE_FORCE_INTEL=1
+    - MKL_THREADING_LAYER=GNU python -m launch --nnodes={nnodes} --nproc_per_node={ngpus} --master_port 12345 main.py 
+      --data-path /mnt/test_data_storage/imagenet_zip/2012
+      --zip 
+      --batch-size {batch_size}
+      --cfg configs/focal_{model_size}_patch4_window{wsize}_224.yaml 
+      --opts 
+        DATA.NUM_WORKERS 2 
+        TRAIN.BASE_LR {lr}
+        MODEL.TYPE {model_type} 
+        MODEL.FOCAL.FOCAL_POOL {pool_method} 
+        MODEL.FOCAL.USE_SHIFT {use_shift} 
+        MODEL.FOCAL.USE_CONV_EMBED {use_conv_embed} 
+        MODEL.FOCAL.FOCAL_WINDOWS {focal_windows}
+        MODEL.FOCAL.FOCAL_LEVELS {focal_levels}     
+        MODEL.FOCAL.FOCAL_FACTORS {focal_factors}   
+        MODEL.FOCAL.FOCAL_STRIDES {focal_strides}
+    submit_args:
+      container_args:
+        shm_size: 2048g
+  max_trials: 36
+  type: grid          
+  params:
+    - name: nnodes
+      spec: discrete
+      values: [4]
+    - name: ngpus
+      spec: discrete
+      values: [8]  
+    - name: batch_size
+      spec: discrete
+      values: [32]
+    - name: wsize
+      spec: discrete
+      values: [7]  
+    - name: model_size
+      spec: discrete
+      values: ['base']
+    - name: model_type
+      spec: discrete
+      values: [
+        'focal_eccv'
+      ]      
+    - name: pool_method
+      spec: discrete
+      values: ['conv']        
+    - name: focal_levels
+      spec: discrete
+      values: ['[2,2,2,2]']
+    - name: focal_factors
+      spec: discrete
+      values: ['[2,2,2,2]']
+    - name: focal_strides
+      spec: discrete
+      values: ['[7,5,5,3]']
+    - name: use_shift
+      spec: discrete
+      values: [False]
+    - name: use_conv_embed
+      spec: discrete
+      values: [False]                      
+    - name: focal_windows
+      spec: discrete
+      values: ['[7,7,7,7]'] 
+    - name: lr
+      spec: discrete
+      values: [5e-4]

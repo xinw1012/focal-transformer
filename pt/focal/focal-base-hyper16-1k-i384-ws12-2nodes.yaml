@@ -1,0 +1,83 @@
+description: train clip model on google cc and sbu
+
+target:
+  service: amlk8s
+  name: ms-shared-v100
+
+environment:
+  # image: pengchuanzhang/maskrcnn:py3.7-cuda10.0-pytorch1.4
+  # image: jwyang/videotransformer:cuda10.0-pytorch1.4-py3.7
+  # image: jw2yang/video:v0.2
+  image: jw2yang/video-pytorch1.7:v0.1
+
+storage:
+  test_data_storage:
+    storage_account_name: vlpdatasets
+    container_name: data
+  model_storage:
+    storage_account_name: vlpdatasets
+    container_name: model    
+  output_storage:
+    storage_account_name: projects4jw
+    container_name: phillytools
+
+code:
+  # local directory of the code. this will be uploaded to the server.
+  # $CONFIG_DIR is expanded to the directory of this config file
+  local_dir: ./
+
+search:
+  job_template:
+    name: train_focal_base_i384_ws12_dpr{dpr}
+    sku: G16
+    sku_count: 2
+    aml_mpirun:
+      process_count_per_node: 1
+      # AML only supports: OpenMpi or IntelMpi
+      communicator: "OpenMpi"
+    command:
+    - ulimit -n 4096
+    - pip install timm antialiased-cnns bcolz ftfy regex tqdm
+    - pip install opencv-python==4.4.0.46 termcolor==1.1.0 yacs==0.1.8
+    - export MKL_SERVICE_FORCE_INTEL=1
+    - python main_mnodes.py
+      --num_gpus_per_node {ngpus}
+      --num_nodes {nnodes}
+      --data_path /msrhyper-ddn/msrhyper/jianwyan/imagenet_zip/2012
+      --samples_per_gpu {batch_size}
+      --config_file configs/focal_base_patch4_window12_384.yaml 
+      --model_backbone_type {model_type} 
+      --model_expand_layer {expand_layer} 
+      --model_drop_path_rate {dpr} 
+      --model_pool_method {pool_method} 
+      --model_expand_size {expand_size} 
+    submit_args:
+      container_args:
+        shm_size: 2048g
+  max_trials: 36
+  type: grid          
+  params:
+    - name: ngpus
+      spec: discrete
+      values: [16]  
+    - name: nnodes
+      spec: discrete
+      values: [2]        
+    - name: batch_size
+      spec: discrete
+      values: [16]
+    - name: model_type
+      spec: discrete
+      values: ['swinv24']  
+    - name: expand_layer
+      spec: discrete
+      values: ['even']                  
+    - name: dpr
+      spec: discrete
+      values: [0.4]        
+    - name: pool_method
+      spec: discrete
+      values: ['fc']    
+    - name: expand_size
+      spec: discrete
+      values: [3]     

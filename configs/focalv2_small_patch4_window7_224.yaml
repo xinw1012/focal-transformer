@@ -1,0 +1,13 @@
+MODEL:
+  TYPE: focalv2
+  NAME: focalv2_small_patch4_window7_224
+  DROP_PATH_RATE: 0.3
+  FOCAL:
+    EMBED_DIM: 96
+    DEPTHS: [2, 2, 18, 2]
+    NUM_HEADS: [3, 6, 12, 24]
+    WINDOW_SIZE: 7 
+    FOCAL_POOL: "fc"
+    FOCAL_STAGES: [0, 1, 2, 3]
+    FOCAL_LEVELS: [1, 1, 1, 1]
+    FOCAL_WINDOWS: [7, 7, 7, 7]

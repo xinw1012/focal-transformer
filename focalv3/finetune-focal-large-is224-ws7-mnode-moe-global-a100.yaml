@@ -1,0 +1,122 @@
+description: train clip model on google cc and sbu
+
+target:
+  service: sing
+  name: msrredmondvc
+
+environment:
+  image: amlt-sing/deepspeed-0.4-pytorch-1.9.0-cuda11.3-a100
+
+storage:
+  test_data_storage:
+    storage_account_name: vlpdatasets
+    container_name: data
+  model_storage:
+    storage_account_name: projects4jw
+    container_name: model
+
+code:
+  # local directory of the code. this will be uploaded to the server.
+  # $CONFIG_DIR is expanded to the directory of this config file
+  local_dir: ./
+
+search:
+  job_template:
+    name: finetune_{model_type}_{lr}_{depths}_{focal_levels}_{focal_windows}_{focal_factors}_{focal_strides}_{embed_dim}_{dpr}_pool{pool_method}_conv{use_conv_embed}_is{isize}_ws{wsize}
+    sku: 2xG8
+    aml_mpirun:
+      process_count_per_node: 1
+      # AML only supports: OpenMpi or IntelMpi
+      communicator: "OpenMpi"
+    command:
+    - ulimit -n 4096
+    - pip install timm==0.4.12 antialiased-cnns bcolz ftfy regex tqdm einops
+    # - git clone https://github.com/NVIDIA/apex.git & cd apex & python setup.py install --cuda_ext --cpp_ext --user & cd ..
+    - pip install opencv-python==4.4.0.46 termcolor==1.1.0 yacs==0.1.8
+    - cd apex
+    - python setup.py install --cuda_ext --cpp_ext --user
+    - cd ../
+    - export MKL_SERVICE_FORCE_INTEL=1
+    - MKL_THREADING_LAYER=GNU python -m launch --nnodes={nnodes} --nproc_per_node={ngpus} --master_port 12345 main.py 
+      --data-path /mnt/test_data_storage/imagenet_zip/2012
+      --zip 
+      --resume /mnt/model_storage/imagenet22k/focalv3-large-lr0.0005-wd0.05-bs4096-clip5.0-g32/large.yaml_conf~/run_1/best_model/model/default/model_state_dict.pt
+      --batch-size {batch_size}
+      --cfg configs/focal_large_patch4_window7_224.yaml 
+      --opts 
+        DATA.NUM_WORKERS 2 
+        TRAIN.EPOCHS 30
+        TRAIN.WARMUP_EPOCHS 0 
+        AUG.MIXUP_PROB 0.0
+        AUG.CUTMIX 0.0
+        AUG.MIXUP 0.0
+        TRAIN.WEIGHT_DECAY 0.00000001        
+        DATA.IMG_SIZE {isize}
+        TRAIN.BASE_LR {lr}         
+        MODEL.TYPE {model_type} 
+        MODEL.FOCAL.WINDOW_SIZE {wsize}
+        MODEL.DROP_PATH_RATE {dpr}
+        MODEL.FOCAL.EMBED_DIM {embed_dim}
+        MODEL.FOCAL.FOCAL_POOL {pool_method} 
+        MODEL.FOCAL.FOCAL_WINDOWS {focal_windows}
+        MODEL.FOCAL.DEPTHS {depths}
+        MODEL.FOCAL.USE_CONV_EMBED {use_conv_embed} 
+        MODEL.FOCAL.FOCAL_LEVELS {focal_levels}     
+        MODEL.FOCAL.FOCAL_FACTORS {focal_factors}   
+        MODEL.FOCAL.FOCAL_STRIDES {focal_strides}
+    submit_args:
+      container_args:
+        shm_size: 2048g
+  max_trials: 36
+  type: grid          
+  params:
+    - name: nnodes
+      spec: discrete
+      values: [2]
+    - name: ngpus
+      spec: discrete
+      values: [8]  
+    - name: batch_size
+      spec: discrete
+      values: [32]
+    - name: isize
+      spec: discrete
+      values: [224, 384]
+    - name: wsize
+      spec: discrete
+      values: [7]
+    - name: model_type
+      spec: discrete
+      values: [
+        'focal_moe_global_smart_unified_routedv46'
+      ]      
+    - name: pool_method
+      spec: discrete
+      values: ['conv']     
+    - name: depths
+      spec: discrete
+      values: ['[2,2,18,2]']
+    - name: embed_dim
+      spec: discrete
+      values: [192]      
+    - name: focal_levels
+      spec: discrete
+      values: ['[1,1,1,1]']
+    - name: focal_factors
+      spec: discrete
+      values: ['[2,2,2,2]']
+    - name: focal_strides
+      spec: discrete
+      values: ['[1,1,1,1]']
+    - name: use_conv_embed
+      spec: discrete
+      values: [False]                   
+    - name: focal_windows
+      spec: discrete
+      values: ['[7,7,7,7]']
+    - name: dpr
+      spec: discrete
+      values: [0.3]      
+    - name: lr
+      spec: discrete
+      values: [5e-5]

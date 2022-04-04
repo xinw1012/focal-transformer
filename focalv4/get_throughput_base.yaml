@@ -1,0 +1,97 @@
+description: train clip model on google cc and sbu
+
+target:
+  service: amlk8s
+  # name: ms-shared-v100
+  name: itpwus2v100cl
+  vc: gcrprojvc1
+
+# target:
+#   vc: msrhyper
+#   service: amlk8s
+#   name: itphyperdgxcl1
+
+environment:
+  # image: pengchuanzhang/maskrcnn:py3.7-cuda10.0-pytorch1.4
+  # image: jwyang/videotransformer:cuda10.0-pytorch1.4-py3.7
+  # image: jw2yang/video:v0.2
+  # image: jw2yang/video-pytorch1.7:v0.1
+  image: leoxiao/pytorch:ubuntu18.04_torch1.9-cuda11.2-nccl_bootstrap_tag-deepspeed0.4.5
+
+
+storage:
+  test_data_storage:
+    storage_account_name: vlpdatasets
+    container_name: data
+  output_storage:
+    storage_account_name: projects4jw
+    container_name: phillytools
+
+code:
+  # local directory of the code. this will be uploaded to the server.
+  # $CONFIG_DIR is expanded to the directory of this config file
+  local_dir: ./
+
+# --data-path /msrhyper-weka/msrhyper/jianwyan/datasets/imagenet
+
+search:
+  job_template:
+    name: get_throughput_{msize}_{wsize}_{use_route}_conv{use_conv_embed}
+    sku: G1
+    sku_count: 1
+    # aml_mpirun:
+    #   process_count_per_node: 1
+    #   # AML only supports: OpenMpi or IntelMpi
+    #   communicator: "OpenMpi"
+    command:
+    - ulimit -n 4096
+    - pip install timm ftfy regex tqdm einops
+    - pip install opencv-python==4.4.0.46 termcolor==1.1.0 yacs==0.1.8
+    - export MKL_SERVICE_FORCE_INTEL=1
+    - MKL_THREADING_LAYER=GNU python -m torch.distributed.launch --nproc_per_node {ngpus} --master_port 12345 main.py
+      --data-path /mnt/test_data_storage/imagenet_zip/2012
+      --zip 
+      --batch-size {batch_size}
+      --cfg configs/focalv2_{msize}_patch4_window{wsize}_224.yaml 
+      --opts 
+        MODEL.TYPE {model_type} 
+        MODEL.FOCAL.FOCAL_POOL {pool_method} 
+        MODEL.FOCAL.USE_SHIFT False
+        MODEL.FOCAL.FOCAL_WINDOWS '[7,7,7,7]'
+        MODEL.FOCAL.FOCAL_LEVELS '[3,3,3,3]'
+        MODEL.FOCAL.DEPTHS '[2,4,21,2]'
+        MODEL.FOCAL.FOCAL_TOPK 128
+        MODEL.FOCAL.USE_ROUTE {use_route}       
+        MODEL.FOCAL.USE_CONV_EMBED {use_conv_embed} 
+        --throughput 
+      --amp-opt-level O0
+    submit_args:
+      container_args:
+        shm_size: 2048g
+  max_trials: 36
+  type: grid          
+  params:
+    - name: ngpus
+      spec: discrete
+      values: [1]  
+    - name: batch_size
+      spec: discrete
+      values: [128]
+    - name: wsize
+      spec: discrete
+      values: [7]
+    - name: msize
+      spec: discrete
+      values: ['tiny']      
+    - name: model_type
+      spec: discrete
+      values: ['focal_moe_global_smart_unified_routedv15']         
+    - name: pool_method
+      spec: discrete
+      values: ['conv']     
+    - name: use_route
+      spec: discrete
+      values: [False]        
+    - name: use_conv_embed
+      spec: discrete
+      values: [False, True]              

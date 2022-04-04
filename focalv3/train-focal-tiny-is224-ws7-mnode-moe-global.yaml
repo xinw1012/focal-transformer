@@ -1,0 +1,175 @@
+description: train clip model on google cc and sbu
+
+target:
+  service: amlk8s
+  # name: ms-shared-v100
+  # name: itphyperdgx2cl2
+  # vc: hcrr07
+  # name: itphyperdgx2cl1
+  # vc: hai1
+  # name: itpwus2v100cl
+  # vc: gcrprojvc1
+  # name: scus-v100-2
+  # vc: Image_Languge_Pretraining
+  # name: itplabrr1cl1
+  # vc: resrchvc
+  name: itphyperdellcl1
+  vc: msrhyper
+
+environment:
+  registry: docker.io
+  # image: jw2yang/video-pytorch1.7:v0.1
+  image: leoxiao/pytorch:ubuntu18.04_torch1.9-cuda11.2-nccl_bootstrap_tag-deepspeed0.4.5
+  # image: leoxiao/pytorch:ubuntu18.04_torch1.9-cuda10.2-nccl_bootstrap_tag-deepspeed0.4.5
+  # image: amsword/setup:py36pt17u18cu11
+  # image: pengchuanzhang/maskrcnn:ubuntu18-py3.7-cuda10.1-pytorch1.7
+  # setup:
+  # - ./azcopy_linux_amd64_10.12.1/azcopy cp "https://vlpdatasets.blob.core.windows.net/data/imagenet_zip?sv=2020-04-08&st=2021-09-29T06%3A46%3A05Z&se=2021-10-30T06%3A46%3A00Z&sr=c&sp=rl&sig=L87lyb5jDF0fyCJrZxk0v3GkyYjz7PTwBZ7%2B%2FlxZ2PI%3D" /tmp/datasets --recursive
+  # - ln -s /tmp/datasets/imagenet_zip DATASET
+
+# target:
+#   service: amlk8s
+#   name: msrredmondvc
+#   vc: msrhyper
+
+# environment:
+#   image: amlt-aisc/deepspeed-0.4-pytorch-1.9.0-cuda11.3-a100
+
+storage:
+  test_data_storage:
+    storage_account_name: vlpdatasets
+    container_name: data
+  # output_storage:
+  #   storage_account_name: projects4jw
+  #   container_name: phillytools
+
+code:
+  # local directory of the code. this will be uploaded to the server.
+  # $CONFIG_DIR is expanded to the directory of this config file
+  local_dir: ./
+
+search:
+  job_template:
+    # name: train_{model_type}_{depths}_{focal_levels}_topk{focal_topk}_{focal_routing_topk}_{focal_windows}_route{use_route}
+    name: train_{model_type}_gelu_focalweights_prepostln_patchembed_{lr}_{depths}_{focal_levels}_{focal_windows}_{focal_factors}_{focal_strides}_{embed_dim}_{num_heads}_topk{focal_topk}_{dpr}_pool{pool_method}_conv{use_conv_embed}_mute{mute_fine_grain}
+    sku: 4xG4
+    aml_mpirun:
+      process_count_per_node: 1
+      # AML only supports: OpenMpi or IntelMpi
+      communicator: "OpenMpi"
+    command:
+    - ulimit -n 4096
+    - pip install timm==0.4.12 antialiased-cnns bcolz ftfy regex tqdm einops
+    # - git clone https://github.com/NVIDIA/apex.git & cd apex & python setup.py install --cuda_ext --cpp_ext --user & cd ..
+    - pip install opencv-python==4.4.0.46 termcolor==1.1.0 yacs==0.1.8
+    - export MKL_SERVICE_FORCE_INTEL=1
+    - MKL_THREADING_LAYER=GNU python -m launch --nnodes={nnodes} --nproc_per_node={ngpus} --master_port 12345 main.py 
+      --data-path /mnt/test_data_storage/imagenet_zip/2012
+      --zip 
+      --batch-size {batch_size}
+      --cfg configs/focal_{msize}_patch4_window{wsize}_224.yaml 
+      --opts 
+        DATA.NUM_WORKERS 2 
+        TRAIN.BASE_LR {lr}
+        MODEL.TYPE {model_type} 
+        MODEL.DROP_PATH_RATE {dpr}
+        MODEL.FOCAL.EMBED_DIM {embed_dim}
+        MODEL.FOCAL.NUM_HEADS {num_heads}
+        MODEL.FOCAL.FOCAL_POOL {pool_method} 
+        MODEL.FOCAL.FOCAL_STAGES {pool_stages} 
+        MODEL.FOCAL.FOCAL_WINDOWS {focal_windows}
+        MODEL.FOCAL.DEPTHS {depths}
+        MODEL.FOCAL.USE_SHIFT {use_shift} 
+        MODEL.FOCAL.USE_CONV_ROUTE {use_conv_route} 
+        MODEL.FOCAL.USE_CONV_EMBED {use_conv_embed} 
+        MODEL.FOCAL.FOCAL_LEVELS {focal_levels}     
+        MODEL.FOCAL.FOCAL_FACTORS {focal_factors}   
+        MODEL.FOCAL.FOCAL_STRIDES {focal_strides}
+        MODEL.FOCAL.FOCAL_TOPK {focal_topk}
+        MODEL.FOCAL.FOCAL_ROUTING_TOPK {focal_routing_topk}
+        MODEL.FOCAL.USE_ROUTE {use_route}
+        MODEL.FOCAL.FOCAL_SHAPE {focal_shape}
+        MODEL.FOCAL.MUTE_FINE_GRAIN {mute_fine_grain}
+    submit_args:
+      container_args:
+        shm_size: 2048g
+  max_trials: 36
+  type: grid          
+  params:
+    - name: nnodes
+      spec: discrete
+      values: [4]
+    - name: ngpus
+      spec: discrete
+      values: [4]  
+    - name: batch_size
+      spec: discrete
+      values: [64]
+    - name: wsize
+      spec: discrete
+      values: [7]
+    - name: msize
+      spec: discrete
+      values: ['tiny']
+    - name: model_type
+      spec: discrete
+      values: [
+        'focal_moe_global_smart_unified_routedv49'
+      ]      
+    - name: pool_method
+      spec: discrete
+      values: ['conv']     
+    - name: pool_stages
+      spec: discrete
+      values: ['[0,1,2,3]']   
+    - name: depths
+      spec: discrete
+      values: ['[2,2,6,2]']
+    - name: embed_dim
+      spec: discrete
+      values: [96]      
+    - name: focal_levels
+      spec: discrete
+      values: ['[1,1,1,1]']
+    - name: focal_factors
+      spec: discrete
+      values: ['[2,2,2,2]']
+    - name: focal_strides
+      spec: discrete
+      values: ['[1,1,1,1]']
+    - name: use_shift
+      spec: discrete
+      values: [False]
+    - name: use_conv_route
+      spec: discrete
+      values: [False]    
+    - name: use_conv_embed
+      spec: discrete
+      values: [False]      
+    - name: mute_fine_grain
+      spec: discrete
+      values: [False]                  
+    - name: focal_topk
+      spec: discrete
+      values: [64]
+    - name: focal_routing_topk
+      spec: discrete
+      values: [64]      
+    - name: use_route
+      spec: discrete
+      values: [False]
+    - name: focal_windows
+      spec: discrete
+      values: ['[7,7,7,7]']
+    - name: num_heads
+      spec: discrete
+      values: ['[3,6,12,24]']
+    - name: focal_shape
+      spec: discrete
+      values: ["circle"]
+    - name: dpr
+      spec: discrete
+      values: [0.2]      
+    - name: lr
+      spec: discrete
+      values: [5e-4]

@@ -1,0 +1,19 @@
+MODEL:
+  TYPE: focal
+  NAME: focal_tiny_patch4_window7_224
+  DROP_PATH_RATE: 0.2
+  FOCAL:
+    EMBED_DIM: 64
+    DEPTHS: [1, 2, 21, 2]
+    NUM_HEADS: [2, 4, 8, 16]
+    WINDOW_SIZE: 7 
+    FOCAL_POOL: "fc"
+    FOCAL_STAGES: [0, 1, 2, 3]
+    FOCAL_LEVELS: [1, 1, 1, 1]
+    FOCAL_WINDOWS: [7, 5, 3, 1]
+    EXPAND_SIZES: [3, 3, 3, 3] 
+    USE_PRE_NORM: True 
+DATA:
+  BATCH_SIZE: 64 
+  DATA_PATH: /mnt/test_data_storage/imagenet_zip/2012 
+  ZIP_MODE: True 

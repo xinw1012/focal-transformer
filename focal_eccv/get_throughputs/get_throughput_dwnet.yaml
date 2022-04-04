@@ -1,0 +1,81 @@
+description: train clip model on google cc and sbu
+
+target:
+  service: amlk8s
+  # name: ms-shared-v100
+  # name: itpwus2v100cl
+  # vc: gcrprojvc1
+  # name: itplabrr1cl1
+  # vc: resrchvc
+  # name: itphyperdellcl1
+  # vc: msrhyper
+  # name: itphyperdgx2cl1
+  # vc: hai1
+  name: itphyperdgx2cl2
+  vc: hcrr07
+  # name: itphyperdgx2cl1
+  # vc: hai2
+
+# target:
+#   vc: msrhyper
+#   service: amlk8s
+#   name: itphyperdgxcl1
+
+environment:
+  # image: pengchuanzhang/maskrcnn:py3.7-cuda10.0-pytorch1.4
+  # image: jwyang/videotransformer:cuda10.0-pytorch1.4-py3.7
+  # image: jw2yang/video:v0.2
+  image: amsword/setup:py36pt17u18cu11
+
+
+storage:
+  test_data_storage:
+    storage_account_name: vlpdatasets
+    container_name: data
+
+code:
+  # local directory of the code. this will be uploaded to the server.
+  # $CONFIG_DIR is expanded to the directory of this config file
+  local_dir: ./
+
+# --data-path /msrhyper-weka/msrhyper/jianwyan/datasets/imagenet
+
+search:
+  job_template:
+    name: get_throughput_{msize}
+    sku: 1xG1
+    # aml_mpirun:
+    #   process_count_per_node: 1
+    #   # AML only supports: OpenMpi or IntelMpi
+    #   communicator: "OpenMpi"
+    command:
+    - ulimit -n 4096
+    - pip install timm==0.4.12 antialiased-cnns bcolz ftfy regex tqdm einops ptflops
+    # - git clone https://github.com/NVIDIA/apex.git & cd apex & python setup.py install --cuda_ext --cpp_ext --user & cd ..
+    - pip install opencv-python==4.4.0.46 termcolor==1.1.0 yacs==0.1.8
+    - export MKL_SERVICE_FORCE_INTEL=1
+    - MKL_THREADING_LAYER=GNU python -m torch.distributed.launch --nproc_per_node {ngpus} --master_port 12345 main.py
+      --data-path /mnt/test_data_storage/imagenet_zip/2012
+      --zip 
+      --batch-size {batch_size}
+      --cfg configs/{msize}.yaml    
+      --throughput 
+      --amp-opt-level O0
+    submit_args:
+      container_args:
+        shm_size: 2048g
+  max_trials: 36
+  type: grid          
+  params:
+    - name: ngpus
+      spec: discrete
+      values: [1]  
+    - name: batch_size
+      spec: discrete
+      values: [128]
+    - name: msize
+      spec: discrete
+      values: [
+        'dw-net-base', 
+        'dw-net-tiny', 
+      ]                

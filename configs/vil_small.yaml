@@ -1,0 +1,16 @@
+MODEL:
+  TYPE: vil_small
+  SPEC:
+    AVG_POOL: False
+    DROP: 0.0
+    DROP_PATH: 0.1
+    MSVIT:
+      ARCH: l1,h3,d96,n1,s1,g1,p4,f7_l2,h3,d192,n2,s1,g1,p2,f7_l3,h6,d384,n8,s0,g1,p2,f7_l4,h12,d768,n1,s0,g0,p2,f7
+      ATTN_TYPE: longformerhand
+      LN_EPS: 1e-06
+      ONLY_GLOBAL: False
+      SHARE_KV: True
+      SHARE_W: True
+      SW_EXACT: 0
+      MODE: 0
+    NORM_EMBED: True

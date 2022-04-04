@@ -1,0 +1,1161 @@
+[2022-01-24 04:51:58 focal_large_patch4_window7_224] (main.py 355): INFO Full config saved to output/focal_large_patch4_window7_224/default/config.json
+[2022-01-24 04:51:58 focal_large_patch4_window7_224] (main.py 358): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 16
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /mnt/test_data_storage/imagenet_zip/2012
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: true
+DEBUG_MODE: false
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.5
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 18
+    - 2
+    EMBED_DIM: 192
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_FACTORS:
+    - 2
+    - 2
+    - 2
+    - 2
+    FOCAL_KERNELS:
+    - 5
+    - 3
+    - 3
+    - 3
+    FOCAL_LEVELS:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_POOL: conv
+    FOCAL_ROUTING_TOPK: 64
+    FOCAL_SHAPE: circle
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_STRIDES:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_TOPK: 64
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    MUTE_FINE_GRAIN: false
+    NUM_HEADS:
+    - 6
+    - 12
+    - 24
+    - 48
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_CONV_ROUTE: false
+    USE_LAYERSCALE: false
+    USE_PRE_NORM: false
+    USE_ROUTE: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_large_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: /datadrive/azureblobs/model_storage3/imagenet22k/focalv3-large-lr0.0005-wd0.05-bs4096-clip5.0-g32/large.yaml_conf~/run_1/best_model/model/default/model_state_dict.pt
+  SPEC: {}
+  TYPE: focal
+OUTPUT: output/focal_large_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 1.5625e-05
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 1.5625e-07
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 1.5625e-08
+  WEIGHT_DECAY: 0.05
+
+[2022-01-24 04:52:50 focal_large_patch4_window7_224] (main.py 355): INFO Full config saved to output/focal_large_patch4_window7_224/default/config.json
+[2022-01-24 04:52:50 focal_large_patch4_window7_224] (main.py 358): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 16
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /datadrive/azureblobs/vlpdatasets/imagenet_zip/2012
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: true
+DEBUG_MODE: false
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.5
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 18
+    - 2
+    EMBED_DIM: 192
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_FACTORS:
+    - 2
+    - 2
+    - 2
+    - 2
+    FOCAL_KERNELS:
+    - 5
+    - 3
+    - 3
+    - 3
+    FOCAL_LEVELS:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_POOL: conv
+    FOCAL_ROUTING_TOPK: 64
+    FOCAL_SHAPE: circle
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_STRIDES:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_TOPK: 64
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    MUTE_FINE_GRAIN: false
+    NUM_HEADS:
+    - 6
+    - 12
+    - 24
+    - 48
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_CONV_ROUTE: false
+    USE_LAYERSCALE: false
+    USE_PRE_NORM: false
+    USE_ROUTE: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_large_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: /datadrive/azureblobs/model_storage3/imagenet22k/focalv3-large-lr0.0005-wd0.05-bs4096-clip5.0-g32/large.yaml_conf~/run_1/best_model/model/default/model_state_dict.pt
+  SPEC: {}
+  TYPE: focal
+OUTPUT: output/focal_large_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 1.5625e-05
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 1.5625e-07
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 1.5625e-08
+  WEIGHT_DECAY: 0.05
+
+[2022-01-24 04:55:50 focal_large_patch4_window7_224] (main.py 355): INFO Full config saved to output/focal_large_patch4_window7_224/default/config.json
+[2022-01-24 04:55:50 focal_large_patch4_window7_224] (main.py 358): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 16
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /datadrive/azureblobs/vlpdatasets/imagenet_zip/2012
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: true
+DEBUG_MODE: true
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.5
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 18
+    - 2
+    EMBED_DIM: 192
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_FACTORS:
+    - 2
+    - 2
+    - 2
+    - 2
+    FOCAL_KERNELS:
+    - 5
+    - 3
+    - 3
+    - 3
+    FOCAL_LEVELS:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_POOL: conv
+    FOCAL_ROUTING_TOPK: 64
+    FOCAL_SHAPE: circle
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_STRIDES:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_TOPK: 64
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    MUTE_FINE_GRAIN: false
+    NUM_HEADS:
+    - 6
+    - 12
+    - 24
+    - 48
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_CONV_ROUTE: false
+    USE_LAYERSCALE: false
+    USE_PRE_NORM: false
+    USE_ROUTE: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_large_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: /datadrive/azureblobs/model_storage3/imagenet22k/focalv3-large-lr0.0005-wd0.05-bs4096-clip5.0-g32/large.yaml_conf~/run_1/best_model/model/default/model_state_dict.pt
+  SPEC: {}
+  TYPE: focal
+OUTPUT: output/focal_large_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 1.5625e-05
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 1.5625e-07
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 1.5625e-08
+  WEIGHT_DECAY: 0.05
+
+[2022-01-24 04:55:50 focal_large_patch4_window7_224] (main.py 87): INFO Creating model:focal/focal_large_patch4_window7_224
+[2022-01-24 04:55:57 focal_large_patch4_window7_224] (main.py 99): INFO number of params: 199556812
+[2022-01-24 04:55:57 focal_large_patch4_window7_224] (main.py 102): INFO number of GFLOPs: 35.570323968
+[2022-01-24 04:56:51 focal_large_patch4_window7_224] (main.py 355): INFO Full config saved to output/focal_large_patch4_window7_224/default/config.json
+[2022-01-24 04:56:51 focal_large_patch4_window7_224] (main.py 358): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 16
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /datadrive/azureblobs/vlpdatasets/imagenet_zip/2012
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: true
+DEBUG_MODE: true
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.5
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 18
+    - 2
+    EMBED_DIM: 192
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_FACTORS:
+    - 2
+    - 2
+    - 2
+    - 2
+    FOCAL_KERNELS:
+    - 5
+    - 3
+    - 3
+    - 3
+    FOCAL_LEVELS:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_POOL: conv
+    FOCAL_ROUTING_TOPK: 64
+    FOCAL_SHAPE: circle
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_STRIDES:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_TOPK: 64
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    MUTE_FINE_GRAIN: false
+    NUM_HEADS:
+    - 6
+    - 12
+    - 24
+    - 48
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_CONV_ROUTE: false
+    USE_LAYERSCALE: false
+    USE_PRE_NORM: false
+    USE_ROUTE: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_large_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: /datadrive/azureblobs/model_storage3/imagenet22k/focalv3-large-lr0.0005-wd0.05-bs4096-clip5.0-g32/large.yaml_conf~/run_1/best_model/model/default/model_state_dict.pt
+  SPEC: {}
+  TYPE: focal_moe_global_smart_unified_routedv46
+OUTPUT: output/focal_large_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 1.5625e-05
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 1.5625e-07
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 1.5625e-08
+  WEIGHT_DECAY: 0.05
+
+[2022-01-24 04:56:51 focal_large_patch4_window7_224] (main.py 87): INFO Creating model:focal_moe_global_smart_unified_routedv46/focal_large_patch4_window7_224
+[2022-01-24 04:56:55 focal_large_patch4_window7_224] (main.py 99): INFO number of params: 197381056
+[2022-01-24 04:56:55 focal_large_patch4_window7_224] (main.py 102): INFO number of GFLOPs: 34.258397184
+[2022-01-24 04:57:54 focal_large_patch4_window7_224] (main.py 356): INFO Full config saved to output/focal_large_patch4_window7_224/default/config.json
+[2022-01-24 04:57:54 focal_large_patch4_window7_224] (main.py 359): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 16
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /datadrive/azureblobs/vlpdatasets/imagenet_zip/2012
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: true
+DEBUG_MODE: true
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.5
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 18
+    - 2
+    EMBED_DIM: 192
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_FACTORS:
+    - 2
+    - 2
+    - 2
+    - 2
+    FOCAL_KERNELS:
+    - 5
+    - 3
+    - 3
+    - 3
+    FOCAL_LEVELS:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_POOL: conv
+    FOCAL_ROUTING_TOPK: 64
+    FOCAL_SHAPE: circle
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_STRIDES:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_TOPK: 64
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    MUTE_FINE_GRAIN: false
+    NUM_HEADS:
+    - 6
+    - 12
+    - 24
+    - 48
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_CONV_ROUTE: false
+    USE_LAYERSCALE: false
+    USE_PRE_NORM: false
+    USE_ROUTE: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_large_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: /datadrive/azureblobs/model_storage3/imagenet22k/focalv3-large-lr0.0005-wd0.05-bs4096-clip5.0-g32/large.yaml_conf~/run_1/best_model/model/default/model_state_dict.pt
+  SPEC: {}
+  TYPE: focal_moe_global_smart_unified_routedv46
+OUTPUT: output/focal_large_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 1.5625e-05
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 1.5625e-07
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 1.5625e-08
+  WEIGHT_DECAY: 0.05
+
+[2022-01-24 04:57:54 focal_large_patch4_window7_224] (main.py 87): INFO Creating model:focal_moe_global_smart_unified_routedv46/focal_large_patch4_window7_224
+[2022-01-24 04:57:57 focal_large_patch4_window7_224] (main.py 99): INFO number of params: 197381056
+[2022-01-24 04:57:57 focal_large_patch4_window7_224] (main.py 102): INFO number of GFLOPs: 34.258397184
+[2022-01-24 04:57:57 focal_large_patch4_window7_224] (main.py 127): INFO no checkpoint found in output/focal_large_patch4_window7_224/default, ignoring auto resume
+[2022-01-24 05:01:51 focal_large_patch4_window7_224] (main.py 356): INFO Full config saved to output/focal_large_patch4_window7_224/default/config.json
+[2022-01-24 05:01:51 focal_large_patch4_window7_224] (main.py 359): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 16
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /datadrive/azureblobs/vlpdatasets/imagenet_zip/2012
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: true
+DEBUG_MODE: true
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.5
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 18
+    - 2
+    EMBED_DIM: 192
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_FACTORS:
+    - 2
+    - 2
+    - 2
+    - 2
+    FOCAL_KERNELS:
+    - 5
+    - 3
+    - 3
+    - 3
+    FOCAL_LEVELS:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_POOL: conv
+    FOCAL_ROUTING_TOPK: 64
+    FOCAL_SHAPE: circle
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_STRIDES:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_TOPK: 64
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    MUTE_FINE_GRAIN: false
+    NUM_HEADS:
+    - 6
+    - 12
+    - 24
+    - 48
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_CONV_ROUTE: false
+    USE_LAYERSCALE: false
+    USE_PRE_NORM: false
+    USE_ROUTE: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_large_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: /datadrive/azureblobs/model_storage3/imagenet22k/focalv3-large-lr0.0005-wd0.05-bs4096-clip5.0-g32/large.yaml_conf~/run_1/best_model/model/default/model_state_dict.pt
+  SPEC: {}
+  TYPE: focal_moe_global_smart_unified_routedv46
+OUTPUT: output/focal_large_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 1.5625e-05
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 1.5625e-07
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 1.5625e-08
+  WEIGHT_DECAY: 0.05
+
+[2022-01-24 05:01:51 focal_large_patch4_window7_224] (main.py 87): INFO Creating model:focal_moe_global_smart_unified_routedv46/focal_large_patch4_window7_224
+[2022-01-24 05:01:54 focal_large_patch4_window7_224] (main.py 99): INFO number of params: 197381056
+[2022-01-24 05:01:54 focal_large_patch4_window7_224] (main.py 102): INFO number of GFLOPs: 34.258397184
+[2022-01-24 05:01:54 focal_large_patch4_window7_224] (main.py 127): INFO no checkpoint found in output/focal_large_patch4_window7_224/default, ignoring auto resume
+[2022-01-24 05:02:32 focal_large_patch4_window7_224] (main.py 358): INFO Full config saved to output/focal_large_patch4_window7_224/default/config.json
+[2022-01-24 05:02:32 focal_large_patch4_window7_224] (main.py 361): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 16
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /datadrive/azureblobs/vlpdatasets/imagenet_zip/2012
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: true
+DEBUG_MODE: true
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.5
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 18
+    - 2
+    EMBED_DIM: 192
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_FACTORS:
+    - 2
+    - 2
+    - 2
+    - 2
+    FOCAL_KERNELS:
+    - 5
+    - 3
+    - 3
+    - 3
+    FOCAL_LEVELS:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_POOL: conv
+    FOCAL_ROUTING_TOPK: 64
+    FOCAL_SHAPE: circle
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_STRIDES:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_TOPK: 64
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    MUTE_FINE_GRAIN: false
+    NUM_HEADS:
+    - 6
+    - 12
+    - 24
+    - 48
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_CONV_ROUTE: false
+    USE_LAYERSCALE: false
+    USE_PRE_NORM: false
+    USE_ROUTE: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_large_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: /datadrive/azureblobs/model_storage3/imagenet22k/focalv3-large-lr0.0005-wd0.05-bs4096-clip5.0-g32/large.yaml_conf~/run_1/best_model/model/default/model_state_dict.pt
+  SPEC: {}
+  TYPE: focal_moe_global_smart_unified_routedv46
+OUTPUT: output/focal_large_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 1.5625e-05
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 1.5625e-07
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 1.5625e-08
+  WEIGHT_DECAY: 0.05
+
+[2022-01-24 05:02:32 focal_large_patch4_window7_224] (main.py 87): INFO Creating model:focal_moe_global_smart_unified_routedv46/focal_large_patch4_window7_224
+[2022-01-24 05:02:35 focal_large_patch4_window7_224] (main.py 99): INFO number of params: 197381056
+[2022-01-24 05:02:35 focal_large_patch4_window7_224] (main.py 102): INFO number of GFLOPs: 34.258397184
+[2022-01-24 05:02:35 focal_large_patch4_window7_224] (main.py 129): INFO no checkpoint found in output/focal_large_patch4_window7_224/default, ignoring auto resume
+[2022-01-24 05:02:35 focal_large_patch4_window7_224] (utils.py 22): INFO ==============> Resuming form /datadrive/azureblobs/model_storage3/imagenet22k/focalv3-large-lr0.0005-wd0.05-bs4096-clip5.0-g32/large.yaml_conf~/run_1/best_model/model/default/model_state_dict.pt....................
+[2022-01-24 05:04:32 focal_large_patch4_window7_224] (main.py 358): INFO Full config saved to output/focal_large_patch4_window7_224/default/config.json
+[2022-01-24 05:04:32 focal_large_patch4_window7_224] (main.py 361): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 16
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /datadrive/azureblobs/vlpdatasets/imagenet_zip/2012
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: true
+DEBUG_MODE: true
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.5
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 18
+    - 2
+    EMBED_DIM: 192
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_FACTORS:
+    - 2
+    - 2
+    - 2
+    - 2
+    FOCAL_KERNELS:
+    - 5
+    - 3
+    - 3
+    - 3
+    FOCAL_LEVELS:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_POOL: conv
+    FOCAL_ROUTING_TOPK: 64
+    FOCAL_SHAPE: circle
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_STRIDES:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_TOPK: 64
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    MUTE_FINE_GRAIN: false
+    NUM_HEADS:
+    - 6
+    - 12
+    - 24
+    - 48
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_CONV_ROUTE: false
+    USE_LAYERSCALE: false
+    USE_PRE_NORM: false
+    USE_ROUTE: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_large_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: /datadrive/azureblobs/model_storage3/imagenet22k/focalv3-large-lr0.0005-wd0.05-bs4096-clip5.0-g32/large.yaml_conf~/run_1/best_model/model/default/model_state_dict.pt
+  SPEC: {}
+  TYPE: focal_moe_global_smart_unified_routedv46
+OUTPUT: output/focal_large_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 1.5625e-05
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 1.5625e-07
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 1.5625e-08
+  WEIGHT_DECAY: 0.05
+
+[2022-01-24 05:04:32 focal_large_patch4_window7_224] (main.py 87): INFO Creating model:focal_moe_global_smart_unified_routedv46/focal_large_patch4_window7_224
+[2022-01-24 05:04:35 focal_large_patch4_window7_224] (main.py 99): INFO number of params: 197381056
+[2022-01-24 05:04:35 focal_large_patch4_window7_224] (main.py 102): INFO number of GFLOPs: 34.258397184
+[2022-01-24 05:04:35 focal_large_patch4_window7_224] (main.py 129): INFO no checkpoint found in output/focal_large_patch4_window7_224/default, ignoring auto resume
+[2022-01-24 05:04:35 focal_large_patch4_window7_224] (utils.py 22): INFO ==============> Resuming form /datadrive/azureblobs/model_storage3/imagenet22k/focalv3-large-lr0.0005-wd0.05-bs4096-clip5.0-g32/large.yaml_conf~/run_1/best_model/model/default/model_state_dict.pt....................
+[2022-01-24 05:04:42 focal_large_patch4_window7_224] (utils.py 37): INFO <All keys matched successfully>

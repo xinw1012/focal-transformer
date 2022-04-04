@@ -1,0 +1,6602 @@
+[2021-07-19 23:04:43 focal_tiny_patch4_window7_224] (main.py 351): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-07-19 23:04:43 focal_tiny_patch4_window7_224] (main.py 354): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 8
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /home/jwyang/azureblobs/vlpdatasets/imagenet
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 6
+    - 2
+    EMBED_DIM: 96
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    FOCAL_LEVELS:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_POOL: fc
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  TYPE: focal
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 7.8125e-06
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 7.8125e-08
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 7.8125e-09
+  WEIGHT_DECAY: 0.05
+
+[2021-07-19 23:05:47 focal_tiny_patch4_window7_224] (main.py 351): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-07-19 23:05:47 focal_tiny_patch4_window7_224] (main.py 354): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 8
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /home/jwyang/azureblobs/vlpdatasets/imagenet
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 6
+    - 2
+    EMBED_DIM: 96
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    FOCAL_LEVELS:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_POOL: fc
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  TYPE: focal
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 7.8125e-06
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 7.8125e-08
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 7.8125e-09
+  WEIGHT_DECAY: 0.05
+
+[2021-07-19 23:10:41 focal_tiny_patch4_window7_224] (main.py 80): INFO Creating model:focal/focal_tiny_patch4_window7_224
+[2021-07-19 23:12:27 focal_tiny_patch4_window7_224] (main.py 351): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-07-19 23:12:27 focal_tiny_patch4_window7_224] (main.py 354): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 8
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /home/jwyang/azureblobs/vlpdatasets/imagenet
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 6
+    - 2
+    EMBED_DIM: 96
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    FOCAL_LEVELS:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_POOL: fc
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  TYPE: focal
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 7.8125e-06
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 7.8125e-08
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 7.8125e-09
+  WEIGHT_DECAY: 0.05
+
+[2021-07-19 23:17:17 focal_tiny_patch4_window7_224] (main.py 80): INFO Creating model:focal/focal_tiny_patch4_window7_224
+[2021-07-19 23:25:32 focal_tiny_patch4_window7_224] (main.py 351): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-07-19 23:25:32 focal_tiny_patch4_window7_224] (main.py 354): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 8
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /home/jwyang/azureblobs/vlpdatasets/imagenet
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 6
+    - 2
+    EMBED_DIM: 96
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_POOL: fc
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  TYPE: focal
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 7.8125e-06
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 7.8125e-08
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 7.8125e-09
+  WEIGHT_DECAY: 0.05
+
+[2021-07-19 23:30:35 focal_tiny_patch4_window7_224] (main.py 80): INFO Creating model:focal/focal_tiny_patch4_window7_224
+[2021-07-19 23:35:00 focal_tiny_patch4_window7_224] (main.py 92): INFO number of params: 29551420
+[2021-07-19 23:35:00 focal_tiny_patch4_window7_224] (main.py 95): INFO number of GFLOPs: 4.935270144
+[2021-07-19 23:35:00 focal_tiny_patch4_window7_224] (main.py 119): INFO no checkpoint found in output/focal_tiny_patch4_window7_224/default, ignoring auto resume
+[2021-07-19 23:35:00 focal_tiny_patch4_window7_224] (main.py 132): INFO Start training
+[2021-07-19 23:35:05 focal_tiny_patch4_window7_224] (main.py 221): INFO Train: [0/300][0/6250]	eta 7:42:38 lr 0.000000	time 4.4414 (4.4414)	loss 6.8718 (6.8718)	grad_norm 12.1260 (12.1260)	mem 2975MB
+[2021-07-20 07:43:22 focal_tiny_patch4_window7_224] (main.py 351): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-07-20 07:43:22 focal_tiny_patch4_window7_224] (main.py 354): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 8
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /home/jwyang/azureblobs/vlpdatasets/imagenet
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 3
+    - 8
+    - 2
+    EMBED_DIM: 64
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_POOL: fc
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  TYPE: focal
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 7.8125e-06
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 7.8125e-08
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 7.8125e-09
+  WEIGHT_DECAY: 0.05
+
+[2021-07-20 07:44:16 focal_tiny_patch4_window7_224] (main.py 351): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-07-20 07:44:16 focal_tiny_patch4_window7_224] (main.py 354): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 8
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /home/jwyang/azureblobs/vlpdatasets/imagenet
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 3
+    - 8
+    - 2
+    EMBED_DIM: 64
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_POOL: fc
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  TYPE: focal
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 7.8125e-06
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 7.8125e-08
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 7.8125e-09
+  WEIGHT_DECAY: 0.05
+
+[2021-07-20 07:44:16 focal_tiny_patch4_window7_224] (main.py 80): INFO Creating model:focal/focal_tiny_patch4_window7_224
+[2021-07-20 07:44:17 focal_tiny_patch4_window7_224] (main.py 92): INFO number of params: 16097622
+[2021-07-20 07:44:17 focal_tiny_patch4_window7_224] (main.py 95): INFO number of GFLOPs: 2.855854912
+[2021-07-20 07:45:38 focal_tiny_patch4_window7_224] (main.py 351): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-07-20 07:45:38 focal_tiny_patch4_window7_224] (main.py 354): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 8
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /home/jwyang/azureblobs/vlpdatasets/imagenet
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 4
+    - 8
+    - 2
+    EMBED_DIM: 64
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_POOL: fc
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  TYPE: focal
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 7.8125e-06
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 7.8125e-08
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 7.8125e-09
+  WEIGHT_DECAY: 0.05
+
+[2021-07-20 07:45:38 focal_tiny_patch4_window7_224] (main.py 80): INFO Creating model:focal/focal_tiny_patch4_window7_224
+[2021-07-20 07:45:38 focal_tiny_patch4_window7_224] (main.py 92): INFO number of params: 16356508
+[2021-07-20 07:45:38 focal_tiny_patch4_window7_224] (main.py 95): INFO number of GFLOPs: 3.04914912
+[2021-07-20 07:46:38 focal_tiny_patch4_window7_224] (main.py 351): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-07-20 07:46:38 focal_tiny_patch4_window7_224] (main.py 354): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 8
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /home/jwyang/azureblobs/vlpdatasets/imagenet
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 4
+    - 8
+    - 4
+    EMBED_DIM: 64
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_POOL: fc
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  TYPE: focal
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 7.8125e-06
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 7.8125e-08
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 7.8125e-09
+  WEIGHT_DECAY: 0.05
+
+[2021-07-20 07:46:38 focal_tiny_patch4_window7_224] (main.py 80): INFO Creating model:focal/focal_tiny_patch4_window7_224
+[2021-07-20 07:46:38 focal_tiny_patch4_window7_224] (main.py 92): INFO number of params: 23089440
+[2021-07-20 07:46:38 focal_tiny_patch4_window7_224] (main.py 95): INFO number of GFLOPs: 3.375422848
+[2021-07-20 08:06:03 focal_tiny_patch4_window7_224] (main.py 351): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-07-20 08:06:03 focal_tiny_patch4_window7_224] (main.py 354): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 8
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /home/jwyang/azureblobs/vlpdatasets/imagenet
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 4
+    - 8
+    - 4
+    EMBED_DIM: 72
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_POOL: fc
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  TYPE: focal
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 7.8125e-06
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 7.8125e-08
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 7.8125e-09
+  WEIGHT_DECAY: 0.05
+
+[2021-07-20 08:06:03 focal_tiny_patch4_window7_224] (main.py 80): INFO Creating model:focal/focal_tiny_patch4_window7_224
+[2021-07-20 08:06:04 focal_tiny_patch4_window7_224] (main.py 92): INFO number of params: 28593304
+[2021-07-20 08:06:04 focal_tiny_patch4_window7_224] (main.py 95): INFO number of GFLOPs: 4.20861024
+[2021-07-20 08:07:06 focal_tiny_patch4_window7_224] (main.py 351): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-07-20 08:07:06 focal_tiny_patch4_window7_224] (main.py 354): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 8
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /home/jwyang/azureblobs/vlpdatasets/imagenet
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 4
+    - 8
+    - 2
+    EMBED_DIM: 72
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_POOL: fc
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  TYPE: focal
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 7.8125e-06
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 7.8125e-08
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 7.8125e-09
+  WEIGHT_DECAY: 0.05
+
+[2021-07-20 08:07:06 focal_tiny_patch4_window7_224] (main.py 80): INFO Creating model:focal/focal_tiny_patch4_window7_224
+[2021-07-20 08:07:06 focal_tiny_patch4_window7_224] (main.py 92): INFO number of params: 20187540
+[2021-07-20 08:07:06 focal_tiny_patch4_window7_224] (main.py 95): INFO number of GFLOPs: 3.797752896
+[2021-07-20 17:23:33 focal_tiny_patch4_window7_224] (main.py 354): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-07-20 17:23:33 focal_tiny_patch4_window7_224] (main.py 357): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 8
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /home/jwyang/azureblobs/vlpdatasets/imagenet
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+DEBUG_MODE: true
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 1
+    - 2
+    - 18
+    - 1
+    EMBED_DIM: 64
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_POOL: fc
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 2
+    - 4
+    - 8
+    - 16
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  TYPE: focal
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 7.8125e-06
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 7.8125e-08
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 7.8125e-09
+  WEIGHT_DECAY: 0.05
+
+[2021-07-20 17:23:33 focal_tiny_patch4_window7_224] (main.py 83): INFO Creating model:focal/focal_tiny_patch4_window7_224
+[2021-07-20 17:23:33 focal_tiny_patch4_window7_224] (main.py 95): INFO number of params: 20610416
+[2021-07-20 17:23:33 focal_tiny_patch4_window7_224] (main.py 98): INFO number of GFLOPs: 3.989748736
+[2021-07-20 17:43:38 focal_tiny_patch4_window7_224] (main.py 354): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-07-20 17:43:38 focal_tiny_patch4_window7_224] (main.py 357): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 8
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /home/jwyang/azureblobs/vlpdatasets/imagenet
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+DEBUG_MODE: true
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 4
+    - 8
+    - 2
+    EMBED_DIM: 72
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_POOL: fc
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: true
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  TYPE: focal
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 7.8125e-06
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 7.8125e-08
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 7.8125e-09
+  WEIGHT_DECAY: 0.05
+
+[2021-07-20 17:43:38 focal_tiny_patch4_window7_224] (main.py 83): INFO Creating model:focal/focal_tiny_patch4_window7_224
+[2021-07-20 17:43:38 focal_tiny_patch4_window7_224] (main.py 95): INFO number of params: 21283308
+[2021-07-20 17:43:38 focal_tiny_patch4_window7_224] (main.py 98): INFO number of GFLOPs: 3.797752896
+[2021-07-20 21:56:07 focal_tiny_patch4_window7_224] (main.py 354): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-07-20 21:56:07 focal_tiny_patch4_window7_224] (main.py 357): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 8
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /home/jwyang/azureblobs/vlpdatasets/imagenet
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+DEBUG_MODE: true
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 4
+    - 14
+    - 2
+    EMBED_DIM: 64
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_POOL: fc
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 2
+    - 4
+    - 8
+    - 16
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: true
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  TYPE: focal
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 7.8125e-06
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 7.8125e-08
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 7.8125e-09
+  WEIGHT_DECAY: 0.05
+
+[2021-07-20 21:56:07 focal_tiny_patch4_window7_224] (main.py 83): INFO Creating model:focal/focal_tiny_patch4_window7_224
+[2021-07-20 21:56:07 focal_tiny_patch4_window7_224] (main.py 95): INFO number of params: 21864844
+[2021-07-20 21:56:07 focal_tiny_patch4_window7_224] (main.py 98): INFO number of GFLOPs: 4.092885504
+[2021-07-21 00:27:38 focal_tiny_patch4_window7_224] (main.py 354): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-07-21 00:27:38 focal_tiny_patch4_window7_224] (main.py 357): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 8
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /home/jwyang/azureblobs/vlpdatasets/imagenet
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+DEBUG_MODE: true
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 4
+    - 14
+    - 2
+    EMBED_DIM: 64
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_POOL: fc
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 2
+    - 4
+    - 8
+    - 16
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: true
+    USE_LAYERSCALE: true
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  TYPE: focal
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 7.8125e-06
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 7.8125e-08
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 7.8125e-09
+  WEIGHT_DECAY: 0.05
+
+[2021-07-21 00:27:38 focal_tiny_patch4_window7_224] (main.py 83): INFO Creating model:focal/focal_tiny_patch4_window7_224
+[2021-07-21 00:27:38 focal_tiny_patch4_window7_224] (main.py 95): INFO number of params: 21864844
+[2021-07-21 00:27:38 focal_tiny_patch4_window7_224] (main.py 98): INFO number of GFLOPs: 4.092885504
+[2021-07-21 00:33:46 focal_tiny_patch4_window7_224] (main.py 354): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-07-21 00:33:46 focal_tiny_patch4_window7_224] (main.py 357): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 8
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /home/jwyang/azureblobs/vlpdatasets/imagenet
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+DEBUG_MODE: true
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 4
+    - 14
+    - 2
+    EMBED_DIM: 64
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_POOL: fc
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 2
+    - 4
+    - 8
+    - 16
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: true
+    USE_LAYERSCALE: true
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  TYPE: focal
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 7.8125e-06
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 7.8125e-08
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 7.8125e-09
+  WEIGHT_DECAY: 0.05
+
+[2021-07-21 00:33:46 focal_tiny_patch4_window7_224] (main.py 83): INFO Creating model:focal/focal_tiny_patch4_window7_224
+[2021-07-21 00:33:46 focal_tiny_patch4_window7_224] (main.py 95): INFO number of params: 21875340
+[2021-07-21 00:33:46 focal_tiny_patch4_window7_224] (main.py 98): INFO number of GFLOPs: 4.092885504
+[2021-07-21 07:14:15 focal_tiny_patch4_window7_224] (main.py 354): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-07-21 07:14:15 focal_tiny_patch4_window7_224] (main.py 357): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 8
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /home/jwyang/azureblobs/vlpdatasets/imagenet
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: true
+DEBUG_MODE: true
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 4
+    - 4
+    - 12
+    - 4
+    EMBED_DIM: 64
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_POOL: fc
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 2
+    - 4
+    - 8
+    - 16
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: true
+    USE_LAYERSCALE: true
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  TYPE: focal
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 7.8125e-06
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 7.8125e-08
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 7.8125e-09
+  WEIGHT_DECAY: 0.05
+
+[2021-07-21 07:14:15 focal_tiny_patch4_window7_224] (main.py 83): INFO Creating model:focal/focal_tiny_patch4_window7_224
+[2021-07-21 07:14:15 focal_tiny_patch4_window7_224] (main.py 95): INFO number of params: 26883432
+[2021-07-21 07:14:15 focal_tiny_patch4_window7_224] (main.py 98): INFO number of GFLOPs: 4.559617536
+[2021-07-26 20:44:29 focal_tiny_patch4_window7_224] (main.py 354): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-07-26 20:44:29 focal_tiny_patch4_window7_224] (main.py 357): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 16
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /home/jwyang/azureblobs/vlpdatasets/imagenet_zip/2012
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: true
+DEBUG_MODE: false
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 6
+    - 2
+    EMBED_DIM: 96
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_POOL: fc
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_LAYERSCALE: false
+    USE_PRE_NORM: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  TYPE: focal_faster
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 1.5625e-05
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 1.5625e-07
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 1.5625e-08
+  WEIGHT_DECAY: 0.05
+
+[2021-07-26 20:45:31 focal_tiny_patch4_window7_224] (main.py 83): INFO Creating model:focal_faster/focal_tiny_patch4_window7_224
+[2021-07-26 20:45:31 focal_tiny_patch4_window7_224] (main.py 95): INFO number of params: 29551420
+[2021-07-26 20:45:31 focal_tiny_patch4_window7_224] (main.py 98): INFO number of GFLOPs: 4.935270144
+[2021-07-26 20:45:31 focal_tiny_patch4_window7_224] (main.py 122): INFO no checkpoint found in output/focal_tiny_patch4_window7_224/default, ignoring auto resume
+[2021-07-26 20:45:31 focal_tiny_patch4_window7_224] (main.py 135): INFO Start training
+[2021-07-26 20:53:56 focal_tiny_patch4_window7_224] (main.py 354): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-07-26 20:53:56 focal_tiny_patch4_window7_224] (main.py 357): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 16
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /home/jwyang/azureblobs/vlpdatasets/imagenet
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+DEBUG_MODE: false
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 6
+    - 2
+    EMBED_DIM: 96
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_POOL: fc
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_LAYERSCALE: false
+    USE_PRE_NORM: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  TYPE: focal_faster
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 1.5625e-05
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 1.5625e-07
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 1.5625e-08
+  WEIGHT_DECAY: 0.05
+
+[2021-07-26 20:58:05 focal_tiny_patch4_window7_224] (main.py 83): INFO Creating model:focal_faster/focal_tiny_patch4_window7_224
+[2021-07-26 20:58:06 focal_tiny_patch4_window7_224] (main.py 95): INFO number of params: 29551420
+[2021-07-26 20:58:06 focal_tiny_patch4_window7_224] (main.py 98): INFO number of GFLOPs: 4.935270144
+[2021-07-26 20:58:06 focal_tiny_patch4_window7_224] (main.py 122): INFO no checkpoint found in output/focal_tiny_patch4_window7_224/default, ignoring auto resume
+[2021-07-26 20:58:06 focal_tiny_patch4_window7_224] (main.py 135): INFO Start training
+[2021-07-26 20:59:01 focal_tiny_patch4_window7_224] (main.py 354): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-07-26 20:59:01 focal_tiny_patch4_window7_224] (main.py 357): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 16
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /home/jwyang/azureblobs/vlpdatasets/imagenet
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+DEBUG_MODE: false
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 6
+    - 2
+    EMBED_DIM: 96
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_POOL: fc
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_LAYERSCALE: false
+    USE_PRE_NORM: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  TYPE: focal_faster
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 1.5625e-05
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 1.5625e-07
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 1.5625e-08
+  WEIGHT_DECAY: 0.05
+
+[2021-07-26 21:03:19 focal_tiny_patch4_window7_224] (main.py 83): INFO Creating model:focal_faster/focal_tiny_patch4_window7_224
+[2021-07-26 21:03:19 focal_tiny_patch4_window7_224] (main.py 95): INFO number of params: 29551420
+[2021-07-26 21:03:19 focal_tiny_patch4_window7_224] (main.py 98): INFO number of GFLOPs: 4.935270144
+[2021-07-26 21:03:19 focal_tiny_patch4_window7_224] (main.py 122): INFO no checkpoint found in output/focal_tiny_patch4_window7_224/default, ignoring auto resume
+[2021-07-26 21:03:19 focal_tiny_patch4_window7_224] (main.py 135): INFO Start training
+[2021-07-26 22:21:47 focal_tiny_patch4_window7_224] (main.py 354): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-07-26 22:21:47 focal_tiny_patch4_window7_224] (main.py 357): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 16
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /home/jwyang/azureblobs/vlpdatasets/imagenet
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+DEBUG_MODE: false
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 6
+    - 2
+    EMBED_DIM: 96
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_POOL: fc
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_LAYERSCALE: false
+    USE_PRE_NORM: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  TYPE: focal_faster
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 1.5625e-05
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 1.5625e-07
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 1.5625e-08
+  WEIGHT_DECAY: 0.05
+
+[2021-07-26 22:25:59 focal_tiny_patch4_window7_224] (main.py 83): INFO Creating model:focal_faster/focal_tiny_patch4_window7_224
+[2021-07-26 22:25:59 focal_tiny_patch4_window7_224] (main.py 95): INFO number of params: 29551420
+[2021-07-26 22:25:59 focal_tiny_patch4_window7_224] (main.py 98): INFO number of GFLOPs: 4.935270144
+[2021-07-26 22:25:59 focal_tiny_patch4_window7_224] (main.py 122): INFO no checkpoint found in output/focal_tiny_patch4_window7_224/default, ignoring auto resume
+[2021-07-26 22:25:59 focal_tiny_patch4_window7_224] (main.py 135): INFO Start training
+[2021-07-26 22:29:19 focal_tiny_patch4_window7_224] (main.py 354): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-07-26 22:29:19 focal_tiny_patch4_window7_224] (main.py 357): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 16
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /home/jwyang/azureblobs/vlpdatasets/imagenet
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+DEBUG_MODE: false
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 6
+    - 2
+    EMBED_DIM: 96
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 2
+    - 2
+    - 2
+    - 2
+    FOCAL_POOL: fc
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_LAYERSCALE: false
+    USE_PRE_NORM: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  TYPE: focal_faster
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 1.5625e-05
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 1.5625e-07
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 1.5625e-08
+  WEIGHT_DECAY: 0.05
+
+[2021-07-26 22:33:31 focal_tiny_patch4_window7_224] (main.py 83): INFO Creating model:focal_faster/focal_tiny_patch4_window7_224
+[2021-07-26 22:33:32 focal_tiny_patch4_window7_224] (main.py 95): INFO number of params: 29616994
+[2021-07-26 22:33:32 focal_tiny_patch4_window7_224] (main.py 98): INFO number of GFLOPs: 4.935270144
+[2021-07-26 22:33:32 focal_tiny_patch4_window7_224] (main.py 122): INFO no checkpoint found in output/focal_tiny_patch4_window7_224/default, ignoring auto resume
+[2021-07-26 22:33:32 focal_tiny_patch4_window7_224] (main.py 135): INFO Start training
+[2021-07-26 22:35:43 focal_tiny_patch4_window7_224] (main.py 354): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-07-26 22:35:43 focal_tiny_patch4_window7_224] (main.py 357): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 16
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /home/jwyang/azureblobs/vlpdatasets/imagenet
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+DEBUG_MODE: false
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 6
+    - 2
+    EMBED_DIM: 96
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 2
+    - 2
+    - 2
+    - 2
+    FOCAL_POOL: fc
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_LAYERSCALE: false
+    USE_PRE_NORM: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  TYPE: focal_faster
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 1.5625e-05
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 1.5625e-07
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 1.5625e-08
+  WEIGHT_DECAY: 0.05
+
+[2021-07-26 22:39:52 focal_tiny_patch4_window7_224] (main.py 83): INFO Creating model:focal_faster/focal_tiny_patch4_window7_224
+[2021-07-26 22:39:52 focal_tiny_patch4_window7_224] (main.py 95): INFO number of params: 29616994
+[2021-07-26 22:39:52 focal_tiny_patch4_window7_224] (main.py 98): INFO number of GFLOPs: 4.935270144
+[2021-07-26 22:39:52 focal_tiny_patch4_window7_224] (main.py 122): INFO no checkpoint found in output/focal_tiny_patch4_window7_224/default, ignoring auto resume
+[2021-07-26 22:39:52 focal_tiny_patch4_window7_224] (main.py 135): INFO Start training
+[2021-07-26 22:45:21 focal_tiny_patch4_window7_224] (main.py 354): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-07-26 22:45:21 focal_tiny_patch4_window7_224] (main.py 357): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 16
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /home/jwyang/azureblobs/vlpdatasets/imagenet
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+DEBUG_MODE: false
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 6
+    - 2
+    EMBED_DIM: 96
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 2
+    - 2
+    - 2
+    - 2
+    FOCAL_POOL: fc
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_LAYERSCALE: false
+    USE_PRE_NORM: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  TYPE: focal_faster
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 1.5625e-05
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 1.5625e-07
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 1.5625e-08
+  WEIGHT_DECAY: 0.05
+
+[2021-07-26 22:49:34 focal_tiny_patch4_window7_224] (main.py 83): INFO Creating model:focal_faster/focal_tiny_patch4_window7_224
+[2021-07-26 22:49:34 focal_tiny_patch4_window7_224] (main.py 95): INFO number of params: 29616994
+[2021-07-26 22:49:34 focal_tiny_patch4_window7_224] (main.py 98): INFO number of GFLOPs: 4.935270144
+[2021-07-26 22:49:34 focal_tiny_patch4_window7_224] (main.py 122): INFO no checkpoint found in output/focal_tiny_patch4_window7_224/default, ignoring auto resume
+[2021-07-26 22:49:34 focal_tiny_patch4_window7_224] (main.py 135): INFO Start training
+[2021-07-26 22:58:08 focal_tiny_patch4_window7_224] (main.py 354): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-07-26 22:58:08 focal_tiny_patch4_window7_224] (main.py 357): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 16
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /home/jwyang/azureblobs/vlpdatasets/imagenet
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+DEBUG_MODE: false
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 6
+    - 2
+    EMBED_DIM: 96
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 2
+    - 2
+    - 2
+    - 2
+    FOCAL_POOL: fc
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_LAYERSCALE: false
+    USE_PRE_NORM: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  TYPE: focal_faster
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 1.5625e-05
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 1.5625e-07
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 1.5625e-08
+  WEIGHT_DECAY: 0.05
+
+[2021-07-26 23:02:25 focal_tiny_patch4_window7_224] (main.py 83): INFO Creating model:focal_faster/focal_tiny_patch4_window7_224
+[2021-07-26 23:02:25 focal_tiny_patch4_window7_224] (main.py 95): INFO number of params: 29616994
+[2021-07-26 23:02:25 focal_tiny_patch4_window7_224] (main.py 98): INFO number of GFLOPs: 4.935270144
+[2021-07-26 23:02:25 focal_tiny_patch4_window7_224] (main.py 122): INFO no checkpoint found in output/focal_tiny_patch4_window7_224/default, ignoring auto resume
+[2021-07-26 23:02:25 focal_tiny_patch4_window7_224] (main.py 135): INFO Start training
+[2021-07-26 23:19:05 focal_tiny_patch4_window7_224] (main.py 358): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-07-26 23:19:05 focal_tiny_patch4_window7_224] (main.py 361): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 16
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /home/jwyang/azureblobs/vlpdatasets/imagenet
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+DEBUG_MODE: false
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 6
+    - 2
+    EMBED_DIM: 96
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 2
+    - 2
+    - 2
+    - 2
+    FOCAL_POOL: fc
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_LAYERSCALE: false
+    USE_PRE_NORM: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  TYPE: focal_faster
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 1.5625e-05
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 1.5625e-07
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 1.5625e-08
+  WEIGHT_DECAY: 0.05
+
+[2021-07-26 23:23:19 focal_tiny_patch4_window7_224] (main.py 83): INFO Creating model:focal_faster/focal_tiny_patch4_window7_224
+[2021-07-26 23:23:20 focal_tiny_patch4_window7_224] (main.py 95): INFO number of params: 29616994
+[2021-07-26 23:23:20 focal_tiny_patch4_window7_224] (main.py 98): INFO number of GFLOPs: 4.935270144
+[2021-07-26 23:23:20 focal_tiny_patch4_window7_224] (main.py 122): INFO no checkpoint found in output/focal_tiny_patch4_window7_224/default, ignoring auto resume
+[2021-07-26 23:23:20 focal_tiny_patch4_window7_224] (main.py 135): INFO Start training
+[2021-07-26 23:23:59 focal_tiny_patch4_window7_224] (main.py 358): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-07-26 23:23:59 focal_tiny_patch4_window7_224] (main.py 361): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 16
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /home/jwyang/azureblobs/vlpdatasets/imagenet
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+DEBUG_MODE: false
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 6
+    - 2
+    EMBED_DIM: 96
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 2
+    - 2
+    - 2
+    - 2
+    FOCAL_POOL: fc
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_LAYERSCALE: false
+    USE_PRE_NORM: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  TYPE: focal_faster
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 1.5625e-05
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 1.5625e-07
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 1.5625e-08
+  WEIGHT_DECAY: 0.05
+
+[2021-07-26 23:28:13 focal_tiny_patch4_window7_224] (main.py 83): INFO Creating model:focal_faster/focal_tiny_patch4_window7_224
+[2021-07-26 23:28:14 focal_tiny_patch4_window7_224] (main.py 95): INFO number of params: 29616994
+[2021-07-26 23:28:14 focal_tiny_patch4_window7_224] (main.py 98): INFO number of GFLOPs: 4.935270144
+[2021-07-26 23:28:14 focal_tiny_patch4_window7_224] (main.py 122): INFO no checkpoint found in output/focal_tiny_patch4_window7_224/default, ignoring auto resume
+[2021-07-26 23:28:14 focal_tiny_patch4_window7_224] (main.py 135): INFO Start training
+[2021-07-26 23:29:21 focal_tiny_patch4_window7_224] (main.py 358): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-07-26 23:29:21 focal_tiny_patch4_window7_224] (main.py 361): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 16
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /home/jwyang/azureblobs/vlpdatasets/imagenet
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+DEBUG_MODE: false
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 6
+    - 2
+    EMBED_DIM: 96
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_POOL: fc
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_LAYERSCALE: false
+    USE_PRE_NORM: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  TYPE: focal
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 1.5625e-05
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 1.5625e-07
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 1.5625e-08
+  WEIGHT_DECAY: 0.05
+
+[2021-07-26 23:33:36 focal_tiny_patch4_window7_224] (main.py 83): INFO Creating model:focal/focal_tiny_patch4_window7_224
+[2021-07-26 23:33:37 focal_tiny_patch4_window7_224] (main.py 95): INFO number of params: 29551420
+[2021-07-26 23:33:37 focal_tiny_patch4_window7_224] (main.py 98): INFO number of GFLOPs: 4.935270144
+[2021-07-26 23:33:37 focal_tiny_patch4_window7_224] (main.py 122): INFO no checkpoint found in output/focal_tiny_patch4_window7_224/default, ignoring auto resume
+[2021-07-26 23:33:37 focal_tiny_patch4_window7_224] (main.py 135): INFO Start training
+[2021-07-26 23:34:24 focal_tiny_patch4_window7_224] (main.py 178): INFO Train: [0/300][0/3125]	eta 1 day, 17:00:21 lr 0.000000	time 47.2387 (47.2387)	loss 6.9370 (6.9370)	grad_norm 8.4065 (8.4065)	mem 4359MB
+[2021-07-26 23:34:53 focal_tiny_patch4_window7_224] (main.py 358): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-07-26 23:34:53 focal_tiny_patch4_window7_224] (main.py 361): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 16
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /home/jwyang/azureblobs/vlpdatasets/imagenet
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+DEBUG_MODE: false
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 6
+    - 2
+    EMBED_DIM: 96
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 2
+    - 2
+    - 2
+    - 2
+    FOCAL_POOL: fc
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_LAYERSCALE: false
+    USE_PRE_NORM: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  TYPE: focal_faster
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 1.5625e-05
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 1.5625e-07
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 1.5625e-08
+  WEIGHT_DECAY: 0.05
+
+[2021-07-26 23:39:03 focal_tiny_patch4_window7_224] (main.py 83): INFO Creating model:focal_faster/focal_tiny_patch4_window7_224
+[2021-07-26 23:39:03 focal_tiny_patch4_window7_224] (main.py 95): INFO number of params: 29616994
+[2021-07-26 23:39:03 focal_tiny_patch4_window7_224] (main.py 98): INFO number of GFLOPs: 4.935270144
+[2021-07-26 23:39:03 focal_tiny_patch4_window7_224] (main.py 122): INFO no checkpoint found in output/focal_tiny_patch4_window7_224/default, ignoring auto resume
+[2021-07-26 23:39:03 focal_tiny_patch4_window7_224] (main.py 135): INFO Start training
+[2021-07-26 23:39:15 focal_tiny_patch4_window7_224] (main.py 178): INFO Train: [0/300][0/3125]	eta 10:24:06 lr 0.000000	time 11.9828 (11.9828)	loss 6.9188 (6.9188)	grad_norm 8.2822 (8.2822)	mem 4477MB
+[2021-07-26 23:48:58 focal_tiny_patch4_window7_224] (main.py 358): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-07-26 23:48:58 focal_tiny_patch4_window7_224] (main.py 361): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 16
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /home/jwyang/azureblobs/vlpdatasets/imagenet
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+DEBUG_MODE: false
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 6
+    - 2
+    EMBED_DIM: 96
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 2
+    - 2
+    - 2
+    - 2
+    FOCAL_POOL: fc
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_LAYERSCALE: false
+    USE_PRE_NORM: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  TYPE: focal_faster
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 1.5625e-05
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 1.5625e-07
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 1.5625e-08
+  WEIGHT_DECAY: 0.05
+
+[2021-07-26 23:53:08 focal_tiny_patch4_window7_224] (main.py 83): INFO Creating model:focal_faster/focal_tiny_patch4_window7_224
+[2021-07-26 23:53:09 focal_tiny_patch4_window7_224] (main.py 95): INFO number of params: 29616994
+[2021-07-26 23:53:09 focal_tiny_patch4_window7_224] (main.py 98): INFO number of GFLOPs: 4.935270144
+[2021-07-26 23:53:09 focal_tiny_patch4_window7_224] (main.py 122): INFO no checkpoint found in output/focal_tiny_patch4_window7_224/default, ignoring auto resume
+[2021-07-26 23:53:09 focal_tiny_patch4_window7_224] (main.py 135): INFO Start training
+[2021-07-26 23:53:33 focal_tiny_patch4_window7_224] (main.py 178): INFO Train: [0/300][0/3125]	eta 21:05:14 lr 0.000000	time 24.2926 (24.2926)	loss 6.9188 (6.9188)	grad_norm 8.2822 (8.2822)	mem 4684MB
+[2021-07-26 23:56:22 focal_tiny_patch4_window7_224] (main.py 358): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-07-26 23:56:22 focal_tiny_patch4_window7_224] (main.py 361): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 16
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /home/jwyang/azureblobs/vlpdatasets/imagenet
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+DEBUG_MODE: false
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 6
+    - 2
+    EMBED_DIM: 96
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 2
+    - 2
+    - 2
+    - 2
+    FOCAL_POOL: fc
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_LAYERSCALE: false
+    USE_PRE_NORM: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  TYPE: focal_faster
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 1.5625e-05
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 1.5625e-07
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 1.5625e-08
+  WEIGHT_DECAY: 0.05
+
+[2021-07-27 00:00:34 focal_tiny_patch4_window7_224] (main.py 83): INFO Creating model:focal_faster/focal_tiny_patch4_window7_224
+[2021-07-27 00:00:35 focal_tiny_patch4_window7_224] (main.py 95): INFO number of params: 29616994
+[2021-07-27 00:00:35 focal_tiny_patch4_window7_224] (main.py 98): INFO number of GFLOPs: 4.935270144
+[2021-07-27 00:00:35 focal_tiny_patch4_window7_224] (main.py 122): INFO no checkpoint found in output/focal_tiny_patch4_window7_224/default, ignoring auto resume
+[2021-07-27 00:00:35 focal_tiny_patch4_window7_224] (main.py 135): INFO Start training
+[2021-07-27 00:06:06 focal_tiny_patch4_window7_224] (main.py 364): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-07-27 00:06:06 focal_tiny_patch4_window7_224] (main.py 367): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 16
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /home/jwyang/azureblobs/vlpdatasets/imagenet
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+DEBUG_MODE: false
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 6
+    - 2
+    EMBED_DIM: 96
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 2
+    - 2
+    - 2
+    - 2
+    FOCAL_POOL: fc
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_LAYERSCALE: false
+    USE_PRE_NORM: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  TYPE: focal_faster
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 1.5625e-05
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 1.5625e-07
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 1.5625e-08
+  WEIGHT_DECAY: 0.05
+
+[2021-07-27 00:10:13 focal_tiny_patch4_window7_224] (main.py 83): INFO Creating model:focal_faster/focal_tiny_patch4_window7_224
+[2021-07-27 00:10:14 focal_tiny_patch4_window7_224] (main.py 95): INFO number of params: 29616994
+[2021-07-27 00:10:14 focal_tiny_patch4_window7_224] (main.py 98): INFO number of GFLOPs: 4.935270144
+[2021-07-27 00:10:14 focal_tiny_patch4_window7_224] (main.py 122): INFO no checkpoint found in output/focal_tiny_patch4_window7_224/default, ignoring auto resume
+[2021-07-27 00:10:14 focal_tiny_patch4_window7_224] (main.py 135): INFO Start training
+[2021-07-27 00:10:30 focal_tiny_patch4_window7_224] (main.py 216): INFO Train: [0/300][0/3125]	eta 14:12:55 lr 0.000000	time 16.3762 (16.3762)	loss 6.9188 (6.9188)	grad_norm 8.2822 (8.2822)	mem 4684MB
+[2021-07-27 00:13:26 focal_tiny_patch4_window7_224] (main.py 364): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-07-27 00:13:26 focal_tiny_patch4_window7_224] (main.py 367): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 16
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /home/jwyang/azureblobs/vlpdatasets/imagenet
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+DEBUG_MODE: false
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 6
+    - 2
+    EMBED_DIM: 96
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 2
+    - 2
+    - 2
+    - 2
+    FOCAL_POOL: fc
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_LAYERSCALE: false
+    USE_PRE_NORM: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  TYPE: focal_faster
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 1.5625e-05
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 1.5625e-07
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 1.5625e-08
+  WEIGHT_DECAY: 0.05
+
+[2021-07-27 00:17:40 focal_tiny_patch4_window7_224] (main.py 83): INFO Creating model:focal_faster/focal_tiny_patch4_window7_224
+[2021-07-27 00:17:41 focal_tiny_patch4_window7_224] (main.py 95): INFO number of params: 29553784
+[2021-07-27 00:17:41 focal_tiny_patch4_window7_224] (main.py 98): INFO number of GFLOPs: 4.935270144
+[2021-07-27 00:17:41 focal_tiny_patch4_window7_224] (main.py 122): INFO no checkpoint found in output/focal_tiny_patch4_window7_224/default, ignoring auto resume
+[2021-07-27 00:17:41 focal_tiny_patch4_window7_224] (main.py 135): INFO Start training
+[2021-07-27 00:17:55 focal_tiny_patch4_window7_224] (main.py 217): INFO Train: [0/300][0/3125]	eta 11:58:44 lr 0.000000	time 13.7998 (13.7998)	loss 6.8868 (6.8868)	grad_norm 8.4927 (8.4927)	mem 4684MB
+[2021-07-27 00:18:49 focal_tiny_patch4_window7_224] (main.py 364): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-07-27 00:18:49 focal_tiny_patch4_window7_224] (main.py 367): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 16
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /home/jwyang/azureblobs/vlpdatasets/imagenet
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+DEBUG_MODE: false
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 6
+    - 2
+    EMBED_DIM: 96
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 2
+    - 2
+    - 2
+    - 2
+    FOCAL_POOL: fc
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_LAYERSCALE: false
+    USE_PRE_NORM: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  TYPE: focal_faster
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 1.5625e-05
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 1.5625e-07
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 1.5625e-08
+  WEIGHT_DECAY: 0.05
+
+[2021-07-27 00:23:02 focal_tiny_patch4_window7_224] (main.py 83): INFO Creating model:focal_faster/focal_tiny_patch4_window7_224
+[2021-07-27 00:23:03 focal_tiny_patch4_window7_224] (main.py 95): INFO number of params: 29551420
+[2021-07-27 00:23:03 focal_tiny_patch4_window7_224] (main.py 98): INFO number of GFLOPs: 4.935270144
+[2021-07-27 00:23:03 focal_tiny_patch4_window7_224] (main.py 122): INFO no checkpoint found in output/focal_tiny_patch4_window7_224/default, ignoring auto resume
+[2021-07-27 00:23:03 focal_tiny_patch4_window7_224] (main.py 135): INFO Start training
+[2021-07-27 00:23:34 focal_tiny_patch4_window7_224] (main.py 216): INFO Train: [0/300][0/3125]	eta 1 day, 2:35:00 lr 0.000000	time 30.6241 (30.6241)	loss 6.9370 (6.9370)	grad_norm 8.4065 (8.4065)	mem 4684MB
+[2021-07-27 00:24:47 focal_tiny_patch4_window7_224] (main.py 364): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-07-27 00:24:47 focal_tiny_patch4_window7_224] (main.py 367): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 16
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /home/jwyang/azureblobs/vlpdatasets/imagenet
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+DEBUG_MODE: false
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 6
+    - 2
+    EMBED_DIM: 96
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 2
+    - 2
+    - 2
+    - 2
+    FOCAL_POOL: fc
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_LAYERSCALE: false
+    USE_PRE_NORM: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  TYPE: focal_faster
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 1.5625e-05
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 1.5625e-07
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 1.5625e-08
+  WEIGHT_DECAY: 0.05
+
+[2021-07-27 00:29:03 focal_tiny_patch4_window7_224] (main.py 83): INFO Creating model:focal_faster/focal_tiny_patch4_window7_224
+[2021-07-27 00:29:03 focal_tiny_patch4_window7_224] (main.py 95): INFO number of params: 29551420
+[2021-07-27 00:29:03 focal_tiny_patch4_window7_224] (main.py 98): INFO number of GFLOPs: 4.935270144
+[2021-07-27 00:29:03 focal_tiny_patch4_window7_224] (main.py 122): INFO no checkpoint found in output/focal_tiny_patch4_window7_224/default, ignoring auto resume
+[2021-07-27 00:29:03 focal_tiny_patch4_window7_224] (main.py 135): INFO Start training
+[2021-07-27 00:29:37 focal_tiny_patch4_window7_224] (main.py 364): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-07-27 00:29:37 focal_tiny_patch4_window7_224] (main.py 367): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 16
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /home/jwyang/azureblobs/vlpdatasets/imagenet
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+DEBUG_MODE: false
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 6
+    - 2
+    EMBED_DIM: 96
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 2
+    - 2
+    - 2
+    - 2
+    FOCAL_POOL: fc
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_LAYERSCALE: false
+    USE_PRE_NORM: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  TYPE: focal_faster
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 1.5625e-05
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 1.5625e-07
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 1.5625e-08
+  WEIGHT_DECAY: 0.05
+
+[2021-07-27 00:34:03 focal_tiny_patch4_window7_224] (main.py 83): INFO Creating model:focal_faster/focal_tiny_patch4_window7_224
+[2021-07-27 00:34:04 focal_tiny_patch4_window7_224] (main.py 95): INFO number of params: 29551420
+[2021-07-27 00:34:04 focal_tiny_patch4_window7_224] (main.py 98): INFO number of GFLOPs: 4.935270144
+[2021-07-27 00:34:04 focal_tiny_patch4_window7_224] (main.py 122): INFO no checkpoint found in output/focal_tiny_patch4_window7_224/default, ignoring auto resume
+[2021-07-27 00:34:04 focal_tiny_patch4_window7_224] (main.py 135): INFO Start training
+[2021-07-27 00:34:11 focal_tiny_patch4_window7_224] (main.py 234): INFO Train: [0/300][0/3125]	eta 6:29:29 lr 0.000000	time 7.4783 (7.4783)	loss 6.9370 (6.9370)	grad_norm 8.4065 (8.4065)	mem 4684MB
+[2021-07-27 00:41:33 focal_tiny_patch4_window7_224] (main.py 364): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-07-27 00:41:33 focal_tiny_patch4_window7_224] (main.py 367): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 4
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /home/jwyang/azureblobs/vlpdatasets/imagenet
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+DEBUG_MODE: false
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 6
+    - 2
+    EMBED_DIM: 96
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 2
+    - 2
+    - 2
+    - 2
+    FOCAL_POOL: fc
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_LAYERSCALE: false
+    USE_PRE_NORM: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  TYPE: focal_faster
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 3.90625e-06
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 3.90625e-08
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 3.90625e-09
+  WEIGHT_DECAY: 0.05
+
+[2021-07-27 00:45:30 focal_tiny_patch4_window7_224] (main.py 83): INFO Creating model:focal_faster/focal_tiny_patch4_window7_224
+[2021-07-27 00:45:31 focal_tiny_patch4_window7_224] (main.py 95): INFO number of params: 29551420
+[2021-07-27 00:45:31 focal_tiny_patch4_window7_224] (main.py 98): INFO number of GFLOPs: 4.935270144
+[2021-07-27 00:45:31 focal_tiny_patch4_window7_224] (main.py 122): INFO no checkpoint found in output/focal_tiny_patch4_window7_224/default, ignoring auto resume
+[2021-07-27 00:45:31 focal_tiny_patch4_window7_224] (main.py 135): INFO Start training
+[2021-07-27 00:45:33 focal_tiny_patch4_window7_224] (main.py 234): INFO Train: [0/300][0/12500]	eta 9:36:08 lr 0.000000	time 2.7655 (2.7655)	loss 6.9622 (6.9622)	grad_norm 15.3978 (15.3978)	mem 2362MB
+[2021-07-27 00:47:41 focal_tiny_patch4_window7_224] (main.py 234): INFO Train: [0/300][100/12500]	eta 4:27:19 lr 0.000000	time 1.2809 (1.2935)	loss 7.1217 (6.9724)	grad_norm 16.8820 (15.1313)	mem 2362MB
+[2021-07-27 00:49:49 focal_tiny_patch4_window7_224] (main.py 234): INFO Train: [0/300][200/12500]	eta 4:23:34 lr 0.000000	time 1.2795 (1.2857)	loss 6.9273 (6.9753)	grad_norm 16.5748 (15.2375)	mem 2362MB
+[2021-07-27 00:51:14 focal_tiny_patch4_window7_224] (main.py 364): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-07-27 00:51:14 focal_tiny_patch4_window7_224] (main.py 367): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 4
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /home/jwyang/azureblobs/vlpdatasets/imagenet
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+DEBUG_MODE: false
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 6
+    - 2
+    EMBED_DIM: 96
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_POOL: fc
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_LAYERSCALE: false
+    USE_PRE_NORM: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  TYPE: focal
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 3.90625e-06
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 3.90625e-08
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 3.90625e-09
+  WEIGHT_DECAY: 0.05
+
+[2021-07-27 00:55:04 focal_tiny_patch4_window7_224] (main.py 83): INFO Creating model:focal/focal_tiny_patch4_window7_224
+[2021-07-27 00:55:05 focal_tiny_patch4_window7_224] (main.py 95): INFO number of params: 29551420
+[2021-07-27 00:55:05 focal_tiny_patch4_window7_224] (main.py 98): INFO number of GFLOPs: 4.935270144
+[2021-07-27 00:55:05 focal_tiny_patch4_window7_224] (main.py 122): INFO no checkpoint found in output/focal_tiny_patch4_window7_224/default, ignoring auto resume
+[2021-07-27 00:55:05 focal_tiny_patch4_window7_224] (main.py 135): INFO Start training
+[2021-07-27 00:55:07 focal_tiny_patch4_window7_224] (main.py 234): INFO Train: [0/300][0/12500]	eta 9:05:52 lr 0.000000	time 2.6202 (2.6202)	loss 6.9622 (6.9622)	grad_norm 15.3978 (15.3978)	mem 2286MB
+[2021-07-27 00:57:09 focal_tiny_patch4_window7_224] (main.py 234): INFO Train: [0/300][100/12500]	eta 4:14:21 lr 0.000000	time 1.2086 (1.2307)	loss 7.1216 (6.9724)	grad_norm 16.8819 (15.1313)	mem 2286MB
+[2021-07-27 00:59:10 focal_tiny_patch4_window7_224] (main.py 234): INFO Train: [0/300][200/12500]	eta 4:10:16 lr 0.000000	time 1.2103 (1.2208)	loss 6.9273 (6.9753)	grad_norm 16.5747 (15.2375)	mem 2286MB
+[2021-07-27 01:01:11 focal_tiny_patch4_window7_224] (main.py 234): INFO Train: [0/300][300/12500]	eta 4:07:40 lr 0.000000	time 1.2096 (1.2181)	loss 7.0073 (6.9722)	grad_norm 17.4792 (15.4027)	mem 2286MB
+[2021-07-27 01:03:13 focal_tiny_patch4_window7_224] (main.py 234): INFO Train: [0/300][400/12500]	eta 4:05:25 lr 0.000000	time 1.2230 (1.2170)	loss 7.0005 (6.9662)	grad_norm 12.9079 (15.3010)	mem 2286MB
+[2021-07-27 01:11:16 focal_tiny_patch4_window7_224] (main.py 364): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-07-27 01:11:16 focal_tiny_patch4_window7_224] (main.py 367): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 4
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /home/jwyang/azureblobs/vlpdatasets/imagenet
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+DEBUG_MODE: false
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 6
+    - 2
+    EMBED_DIM: 96
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 2
+    - 2
+    - 2
+    - 2
+    FOCAL_POOL: fc
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_LAYERSCALE: false
+    USE_PRE_NORM: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  TYPE: focal_faster
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 3.90625e-06
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 3.90625e-08
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 3.90625e-09
+  WEIGHT_DECAY: 0.05
+
+[2021-07-27 01:15:07 focal_tiny_patch4_window7_224] (main.py 83): INFO Creating model:focal_faster/focal_tiny_patch4_window7_224
+[2021-07-27 01:15:08 focal_tiny_patch4_window7_224] (main.py 95): INFO number of params: 29551420
+[2021-07-27 01:15:08 focal_tiny_patch4_window7_224] (main.py 98): INFO number of GFLOPs: 4.935270144
+[2021-07-27 01:15:08 focal_tiny_patch4_window7_224] (main.py 122): INFO no checkpoint found in output/focal_tiny_patch4_window7_224/default, ignoring auto resume
+[2021-07-27 01:15:08 focal_tiny_patch4_window7_224] (main.py 135): INFO Start training
+[2021-07-27 01:15:10 focal_tiny_patch4_window7_224] (main.py 234): INFO Train: [0/300][0/12500]	eta 8:56:38 lr 0.000000	time 2.5759 (2.5759)	loss 6.9622 (6.9622)	grad_norm 15.3978 (15.3978)	mem 2309MB
+[2021-07-27 01:17:16 focal_tiny_patch4_window7_224] (main.py 234): INFO Train: [0/300][100/12500]	eta 4:23:08 lr 0.000000	time 1.2594 (1.2733)	loss 7.1216 (6.9724)	grad_norm 16.8820 (15.1313)	mem 2309MB
+[2021-07-27 01:19:22 focal_tiny_patch4_window7_224] (main.py 234): INFO Train: [0/300][200/12500]	eta 4:19:36 lr 0.000000	time 1.2566 (1.2664)	loss 6.9273 (6.9753)	grad_norm 16.5747 (15.2375)	mem 2309MB
+[2021-07-27 01:21:28 focal_tiny_patch4_window7_224] (main.py 234): INFO Train: [0/300][300/12500]	eta 4:17:03 lr 0.000000	time 1.2612 (1.2642)	loss 7.0072 (6.9722)	grad_norm 17.4792 (15.4027)	mem 2309MB
+[2021-07-27 01:23:34 focal_tiny_patch4_window7_224] (main.py 234): INFO Train: [0/300][400/12500]	eta 4:14:48 lr 0.000000	time 1.2626 (1.2635)	loss 7.0006 (6.9662)	grad_norm 12.9078 (15.3010)	mem 2309MB
+[2021-07-27 01:25:41 focal_tiny_patch4_window7_224] (main.py 234): INFO Train: [0/300][500/12500]	eta 4:12:39 lr 0.000000	time 1.2649 (1.2633)	loss 7.0319 (6.9721)	grad_norm 13.6858 (15.4088)	mem 2309MB
+[2021-07-27 01:27:47 focal_tiny_patch4_window7_224] (main.py 234): INFO Train: [0/300][600/12500]	eta 4:10:26 lr 0.000000	time 1.2621 (1.2628)	loss 6.7707 (6.9733)	grad_norm 19.1281 (15.4234)	mem 2309MB
+[2021-07-27 01:29:27 focal_tiny_patch4_window7_224] (main.py 364): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-07-27 01:29:27 focal_tiny_patch4_window7_224] (main.py 367): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 16
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /home/jwyang/azureblobs/vlpdatasets/imagenet
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+DEBUG_MODE: false
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 6
+    - 2
+    EMBED_DIM: 96
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 3
+    - 3
+    - 3
+    - 3
+    FOCAL_POOL: fc
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_LAYERSCALE: false
+    USE_PRE_NORM: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  TYPE: focal_faster
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 1.5625e-05
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 1.5625e-07
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 1.5625e-08
+  WEIGHT_DECAY: 0.05
+
+[2021-07-27 01:34:00 focal_tiny_patch4_window7_224] (main.py 364): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-07-27 01:34:00 focal_tiny_patch4_window7_224] (main.py 367): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 16
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /home/jwyang/azureblobs/vlpdatasets/imagenet
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+DEBUG_MODE: false
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 6
+    - 2
+    EMBED_DIM: 96
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 3
+    - 3
+    - 3
+    - 3
+    FOCAL_POOL: fc
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_LAYERSCALE: false
+    USE_PRE_NORM: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  TYPE: focal_faster
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 1.5625e-05
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 1.5625e-07
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 1.5625e-08
+  WEIGHT_DECAY: 0.05
+
+[2021-07-27 01:37:46 focal_tiny_patch4_window7_224] (main.py 83): INFO Creating model:focal_faster/focal_tiny_patch4_window7_224
+[2021-07-27 01:37:47 focal_tiny_patch4_window7_224] (main.py 95): INFO number of params: 29616994
+[2021-07-27 01:37:47 focal_tiny_patch4_window7_224] (main.py 98): INFO number of GFLOPs: 4.935270144
+[2021-07-27 01:37:47 focal_tiny_patch4_window7_224] (main.py 122): INFO no checkpoint found in output/focal_tiny_patch4_window7_224/default, ignoring auto resume
+[2021-07-27 01:37:47 focal_tiny_patch4_window7_224] (main.py 135): INFO Start training
+[2021-07-27 03:24:01 focal_tiny_patch4_window7_224] (main.py 364): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-07-27 03:24:01 focal_tiny_patch4_window7_224] (main.py 367): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 16
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /home/jwyang/azureblobs/vlpdatasets/imagenet
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+DEBUG_MODE: false
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 6
+    - 2
+    EMBED_DIM: 96
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 3
+    - 3
+    - 3
+    - 3
+    FOCAL_POOL: fc
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_LAYERSCALE: false
+    USE_PRE_NORM: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  TYPE: focal_faster
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 1.5625e-05
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 1.5625e-07
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 1.5625e-08
+  WEIGHT_DECAY: 0.05
+
+[2021-07-27 03:27:41 focal_tiny_patch4_window7_224] (main.py 83): INFO Creating model:focal_faster/focal_tiny_patch4_window7_224
+[2021-07-27 03:27:41 focal_tiny_patch4_window7_224] (main.py 95): INFO number of params: 29614750
+[2021-07-27 03:27:41 focal_tiny_patch4_window7_224] (main.py 98): INFO number of GFLOPs: 4.935270144
+[2021-07-27 03:27:41 focal_tiny_patch4_window7_224] (main.py 122): INFO no checkpoint found in output/focal_tiny_patch4_window7_224/default, ignoring auto resume
+[2021-07-27 03:27:41 focal_tiny_patch4_window7_224] (main.py 135): INFO Start training
+[2021-08-06 05:32:39 focal_tiny_patch4_window7_224] (main.py 364): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-08-06 05:32:39 focal_tiny_patch4_window7_224] (main.py 367): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 128
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: ''
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+DEBUG_MODE: true
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 6
+    - 2
+    EMBED_DIM: 96
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 2
+    - 2
+    - 2
+    - 2
+    FOCAL_POOL: fc
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_LAYERSCALE: false
+    USE_PRE_NORM: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  TYPE: pvt_small
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 0.000125
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 1.25e-06
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 1.25e-07
+  WEIGHT_DECAY: 0.05
+
+[2021-08-06 05:32:39 focal_tiny_patch4_window7_224] (main.py 83): INFO Creating model:pvt_small/focal_tiny_patch4_window7_224
+[2021-08-06 05:32:40 focal_tiny_patch4_window7_224] (main.py 95): INFO number of params: 24485864
+[2021-08-06 19:06:06 focal_tiny_patch4_window7_224] (main.py 364): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-08-06 19:06:06 focal_tiny_patch4_window7_224] (main.py 367): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 128
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: ''
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+DEBUG_MODE: true
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.2
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 6
+    - 2
+    EMBED_DIM: 96
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 2
+    - 2
+    - 2
+    - 2
+    FOCAL_POOL: fc
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_LAYERSCALE: false
+    USE_PRE_NORM: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  SPEC: {}
+  TYPE: cvt_13_224
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 0.000125
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 1.25e-06
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 1.25e-07
+  WEIGHT_DECAY: 0.05
+
+[2021-08-06 19:06:06 focal_tiny_patch4_window7_224] (main.py 83): INFO Creating model:cvt_13_224/focal_tiny_patch4_window7_224
+[2021-08-06 19:07:10 focal_tiny_patch4_window7_224] (main.py 364): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-08-06 19:07:10 focal_tiny_patch4_window7_224] (main.py 367): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 128
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: ''
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+DEBUG_MODE: true
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.1
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 6
+    - 2
+    EMBED_DIM: 96
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_POOL: none
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_LAYERSCALE: false
+    USE_PRE_NORM: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  SPEC:
+    ATTN_DROP_RATE:
+    - 0.0
+    - 0.0
+    - 0.0
+    CLS_TOKEN:
+    - false
+    - false
+    - true
+    DEPTH:
+    - 1
+    - 2
+    - 10
+    DIM_EMBED:
+    - 64
+    - 192
+    - 384
+    DROP_PATH_RATE:
+    - 0.0
+    - 0.0
+    - 0.1
+    DROP_RATE:
+    - 0.0
+    - 0.0
+    - 0.0
+    INIT: trunc_norm
+    KERNEL_QKV:
+    - 3
+    - 3
+    - 3
+    MLP_RATIO:
+    - 4.0
+    - 4.0
+    - 4.0
+    NUM_HEADS:
+    - 1
+    - 3
+    - 6
+    NUM_STAGES: 3
+    PADDING_KV:
+    - 1
+    - 1
+    - 1
+    PADDING_Q:
+    - 1
+    - 1
+    - 1
+    PATCH_PADDING:
+    - 2
+    - 1
+    - 1
+    PATCH_SIZE:
+    - 7
+    - 3
+    - 3
+    PATCH_STRIDE:
+    - 4
+    - 2
+    - 2
+    POS_EMBED:
+    - false
+    - false
+    - false
+    QKV_BIAS:
+    - true
+    - true
+    - true
+    QKV_PROJ_METHOD:
+    - dw_bn
+    - dw_bn
+    - dw_bn
+    STRIDE_KV:
+    - 2
+    - 2
+    - 2
+    STRIDE_Q:
+    - 1
+    - 1
+    - 1
+  TYPE: cvt_13_224
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 0.000125
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 1.25e-06
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 1.25e-07
+  WEIGHT_DECAY: 0.05
+
+[2021-08-06 19:07:10 focal_tiny_patch4_window7_224] (main.py 83): INFO Creating model:cvt_13_224/focal_tiny_patch4_window7_224
+[2021-08-06 19:08:07 focal_tiny_patch4_window7_224] (main.py 364): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-08-06 19:08:07 focal_tiny_patch4_window7_224] (main.py 367): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 128
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: ''
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+DEBUG_MODE: true
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.1
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 6
+    - 2
+    EMBED_DIM: 96
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_POOL: none
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_LAYERSCALE: false
+    USE_PRE_NORM: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  SPEC:
+    ATTN_DROP_RATE:
+    - 0.0
+    - 0.0
+    - 0.0
+    CLS_TOKEN:
+    - false
+    - false
+    - true
+    DEPTH:
+    - 1
+    - 2
+    - 10
+    DIM_EMBED:
+    - 64
+    - 192
+    - 384
+    DROP_PATH_RATE:
+    - 0.0
+    - 0.0
+    - 0.1
+    DROP_RATE:
+    - 0.0
+    - 0.0
+    - 0.0
+    INIT: trunc_norm
+    KERNEL_QKV:
+    - 3
+    - 3
+    - 3
+    MLP_RATIO:
+    - 4.0
+    - 4.0
+    - 4.0
+    NUM_HEADS:
+    - 1
+    - 3
+    - 6
+    NUM_STAGES: 3
+    PADDING_KV:
+    - 1
+    - 1
+    - 1
+    PADDING_Q:
+    - 1
+    - 1
+    - 1
+    PATCH_PADDING:
+    - 2
+    - 1
+    - 1
+    PATCH_SIZE:
+    - 7
+    - 3
+    - 3
+    PATCH_STRIDE:
+    - 4
+    - 2
+    - 2
+    POS_EMBED:
+    - false
+    - false
+    - false
+    QKV_BIAS:
+    - true
+    - true
+    - true
+    QKV_PROJ_METHOD:
+    - dw_bn
+    - dw_bn
+    - dw_bn
+    STRIDE_KV:
+    - 2
+    - 2
+    - 2
+    STRIDE_Q:
+    - 1
+    - 1
+    - 1
+  TYPE: cvt_13_224
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 0.000125
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 1.25e-06
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 1.25e-07
+  WEIGHT_DECAY: 0.05
+
+[2021-08-06 19:08:07 focal_tiny_patch4_window7_224] (main.py 83): INFO Creating model:cvt_13_224/focal_tiny_patch4_window7_224
+[2021-08-06 19:08:07 focal_tiny_patch4_window7_224] (main.py 95): INFO number of params: 19997480
+[2021-08-06 21:31:35 focal_tiny_patch4_window7_224] (main.py 364): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-08-06 21:31:35 focal_tiny_patch4_window7_224] (main.py 367): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 128
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: ''
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+DEBUG_MODE: true
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.1
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 6
+    - 2
+    EMBED_DIM: 96
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_POOL: none
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_LAYERSCALE: false
+    USE_PRE_NORM: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  SPEC:
+    AVG_POOL: false
+    DROP: 0.0
+    DROP_PATH: 0.1
+    MSVIT:
+      ARCH: l1,h3,d96,n1,s1,g1,p4,f7_l2,h3,d192,n2,s1,g1,p2,f7_l3,h6,d384,n8,s0,g1,p2,f7_l4,h12,d768,n1,s0,g0,p2,f7
+      ATTN_TYPE: longformerhand
+      LN_EPS: 1e-06
+      ONLY_GLOBAL: false
+      SHARE_KV: true
+      SHARE_W: true
+      SW_EXACT: 0
+    NORM_EMBED: true
+  TYPE: vil_small
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 0.000125
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 1.25e-06
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 1.25e-07
+  WEIGHT_DECAY: 0.05
+
+[2021-08-06 21:31:35 focal_tiny_patch4_window7_224] (main.py 83): INFO Creating model:vil_small/focal_tiny_patch4_window7_224
+[2021-08-06 21:32:13 focal_tiny_patch4_window7_224] (main.py 364): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-08-06 21:32:13 focal_tiny_patch4_window7_224] (main.py 367): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 128
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: ''
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+DEBUG_MODE: true
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.1
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 6
+    - 2
+    EMBED_DIM: 96
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_POOL: none
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_LAYERSCALE: false
+    USE_PRE_NORM: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  SPEC:
+    AVG_POOL: false
+    DROP: 0.0
+    DROP_PATH: 0.1
+    MSVIT:
+      ARCH: l1,h3,d96,n1,s1,g1,p4,f7_l2,h3,d192,n2,s1,g1,p2,f7_l3,h6,d384,n8,s0,g1,p2,f7_l4,h12,d768,n1,s0,g0,p2,f7
+      ATTN_TYPE: longformerhand
+      LN_EPS: 1e-06
+      ONLY_GLOBAL: false
+      SHARE_KV: true
+      SHARE_W: true
+      SW_EXACT: 0
+    NORM_EMBED: true
+  TYPE: vil_small
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 0.000125
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 1.25e-06
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 1.25e-07
+  WEIGHT_DECAY: 0.05
+
+[2021-08-06 21:32:13 focal_tiny_patch4_window7_224] (main.py 83): INFO Creating model:vil_small/focal_tiny_patch4_window7_224
+[2021-08-06 21:34:04 focal_tiny_patch4_window7_224] (main.py 364): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-08-06 21:34:04 focal_tiny_patch4_window7_224] (main.py 367): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 128
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: ''
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+DEBUG_MODE: true
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.1
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 6
+    - 2
+    EMBED_DIM: 96
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_POOL: none
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_LAYERSCALE: false
+    USE_PRE_NORM: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  SPEC:
+    AVG_POOL: false
+    DROP: 0.0
+    DROP_PATH: 0.1
+    MSVIT:
+      ARCH: l1,h3,d96,n1,s1,g1,p4,f7_l2,h3,d192,n2,s1,g1,p2,f7_l3,h6,d384,n8,s0,g1,p2,f7_l4,h12,d768,n1,s0,g0,p2,f7
+      ATTN_TYPE: longformerhand
+      LN_EPS: 1e-06
+      MODE: 0
+      ONLY_GLOBAL: false
+      SHARE_KV: true
+      SHARE_W: true
+      SW_EXACT: 0
+    NORM_EMBED: true
+  TYPE: vil_small
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 0.000125
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 1.25e-06
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 1.25e-07
+  WEIGHT_DECAY: 0.05
+
+[2021-08-06 21:34:04 focal_tiny_patch4_window7_224] (main.py 83): INFO Creating model:vil_small/focal_tiny_patch4_window7_224
+[2021-08-06 21:35:33 focal_tiny_patch4_window7_224] (main.py 364): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-08-06 21:35:33 focal_tiny_patch4_window7_224] (main.py 367): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 128
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: ''
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+DEBUG_MODE: true
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.1
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 6
+    - 2
+    EMBED_DIM: 96
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_POOL: none
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_LAYERSCALE: false
+    USE_PRE_NORM: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  SPEC:
+    AVG_POOL: false
+    DROP: 0.0
+    DROP_PATH: 0.1
+    MSVIT:
+      ARCH: l1,h3,d96,n1,s1,g1,p4,f7_l2,h3,d192,n2,s1,g1,p2,f7_l3,h6,d384,n8,s0,g1,p2,f7_l4,h12,d768,n1,s0,g0,p2,f7
+      ATTN_TYPE: longformerhand
+      LN_EPS: 1e-06
+      MODE: 0
+      ONLY_GLOBAL: false
+      SHARE_KV: true
+      SHARE_W: true
+      SW_EXACT: 0
+    NORM_EMBED: true
+  TYPE: vil_small
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 0.000125
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 1.25e-06
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 1.25e-07
+  WEIGHT_DECAY: 0.05
+
+[2021-08-06 21:35:33 focal_tiny_patch4_window7_224] (main.py 83): INFO Creating model:vil_small/focal_tiny_patch4_window7_224
+[2021-08-10 20:00:21 focal_tiny_patch4_window7_224] (main.py 364): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2021-08-10 20:00:21 focal_tiny_patch4_window7_224] (main.py 367): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 128
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: ''
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: false
+DEBUG_MODE: true
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.1
+  DROP_RATE: 0.0
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 6
+    - 2
+    EMBED_DIM: 96
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_LEVELS:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_POOL: none
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_LAYERSCALE: false
+    USE_PRE_NORM: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  SPEC:
+    ATTN_DROP_RATE:
+    - 0.0
+    - 0.0
+    - 0.0
+    CLS_TOKEN:
+    - false
+    - false
+    - true
+    DEPTH:
+    - 1
+    - 2
+    - 10
+    DIM_EMBED:
+    - 64
+    - 192
+    - 384
+    DROP_PATH_RATE:
+    - 0.0
+    - 0.0
+    - 0.1
+    DROP_RATE:
+    - 0.0
+    - 0.0
+    - 0.0
+    INIT: trunc_norm
+    KERNEL_QKV:
+    - 3
+    - 3
+    - 3
+    MLP_RATIO:
+    - 4.0
+    - 4.0
+    - 4.0
+    NUM_HEADS:
+    - 1
+    - 3
+    - 6
+    NUM_STAGES: 3
+    PADDING_KV:
+    - 1
+    - 1
+    - 1
+    PADDING_Q:
+    - 1
+    - 1
+    - 1
+    PATCH_PADDING:
+    - 2
+    - 1
+    - 1
+    PATCH_SIZE:
+    - 7
+    - 3
+    - 3
+    PATCH_STRIDE:
+    - 4
+    - 2
+    - 2
+    POS_EMBED:
+    - false
+    - false
+    - false
+    QKV_BIAS:
+    - true
+    - true
+    - true
+    QKV_PROJ_METHOD:
+    - dw_bn
+    - dw_bn
+    - dw_bn
+    STRIDE_KV:
+    - 2
+    - 2
+    - 2
+    STRIDE_Q:
+    - 1
+    - 1
+    - 1
+  TYPE: vit_small_patch16
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: false
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 0.000125
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 1.25e-06
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 1.25e-07
+  WEIGHT_DECAY: 0.05
+
+[2021-08-10 20:00:21 focal_tiny_patch4_window7_224] (main.py 83): INFO Creating model:vit_small_patch16/focal_tiny_patch4_window7_224
+[2021-08-10 20:00:21 focal_tiny_patch4_window7_224] (main.py 95): INFO number of params: 22050664
+[2022-03-22 05:35:34 focal_tiny_patch4_window7_224] (main.py 358): INFO Full config saved to output/focal_tiny_patch4_window7_224/default/config.json
+[2022-03-22 05:35:34 focal_tiny_patch4_window7_224] (main.py 361): INFO AMP_OPT_LEVEL: O1
+AUG:
+  AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+  COLOR_JITTER: 0.4
+  CUTMIX: 1.0
+  CUTMIX_MINMAX: null
+  MIXUP: 0.8
+  MIXUP_MODE: batch
+  MIXUP_PROB: 1.0
+  MIXUP_SWITCH_PROB: 0.5
+  RECOUNT: 1
+  REMODE: pixel
+  REPROB: 0.25
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 16
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: /datadrive/azureblobs/vlpdatasets/imagenet_zip/2012
+  IMG_SIZE: 224
+  INTERPOLATION: bicubic
+  NUM_WORKERS: 8
+  PIN_MEMORY: true
+  ZIP_MODE: true
+DEBUG_MODE: false
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.1
+  DROP_RATE: 0.0
+  DWNET:
+    APE: false
+    CONV_TYPE: v1
+    DEPTHS:
+    - 2
+    - 2
+    - 6
+    - 2
+    DYNAMIC: false
+    EMBED_DIM: 96
+    INHOMO: false
+    INHOMO_HEADS:
+    - 4
+    - 8
+    - 16
+    - 32
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    WINDOW_SIZE: 7
+  FOCAL:
+    APE: false
+    DEPTHS:
+    - 2
+    - 2
+    - 6
+    - 2
+    EMBED_DIM: 96
+    EXPAND_LAYER: all
+    EXPAND_SIZES:
+    - 3
+    - 3
+    - 3
+    - 3
+    EXPAND_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_FACTORS:
+    - 2
+    - 2
+    - 2
+    - 2
+    FOCAL_KERNELS:
+    - 5
+    - 3
+    - 3
+    - 3
+    FOCAL_LEVELS:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_POOL: none
+    FOCAL_ROUTING_TOPK: 64
+    FOCAL_SHAPE: circle
+    FOCAL_STAGES:
+    - 0
+    - 1
+    - 2
+    - 3
+    FOCAL_STRIDES:
+    - 1
+    - 1
+    - 1
+    - 1
+    FOCAL_TOPK: 64
+    FOCAL_WINDOWS:
+    - 7
+    - 5
+    - 3
+    - 1
+    IN_CHANS: 3
+    MLP_RATIO: 4.0
+    MUTE_FINE_GRAIN: false
+    NUM_HEADS:
+    - 3
+    - 6
+    - 12
+    - 24
+    PATCH_NORM: true
+    PATCH_SIZE: 4
+    QKV_BIAS: true
+    QK_SCALE: false
+    USE_CONV_EMBED: false
+    USE_CONV_ROUTE: false
+    USE_LAYERSCALE: false
+    USE_PRE_NORM: false
+    USE_ROUTE: false
+    USE_SHIFT: false
+    WINDOW_SIZE: 7
+  LABEL_SMOOTHING: 0.1
+  NAME: focal_tiny_patch4_window7_224
+  NUM_CLASSES: 1000
+  RESUME: ''
+  REUSE_HEAD: false
+  SPEC: {}
+  TYPE: poolformer_m48
+OUTPUT: output/focal_tiny_patch4_window7_224/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+TEST:
+  CROP: true
+THROUGHPUT_MODE: true
+TRAIN:
+  ACCUMULATION_STEPS: 0
+  AUTO_RESUME: true
+  BASE_LR: 1.5625e-05
+  CLIP_GRAD: 5.0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 1.5625e-07
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 1.5625e-08
+  WEIGHT_DECAY: 0.05
+
+[2022-03-22 05:40:16 focal_tiny_patch4_window7_224] (main.py 87): INFO Creating model:poolformer_m48/focal_tiny_patch4_window7_224
+[2022-03-22 05:40:17 focal_tiny_patch4_window7_224] (main.py 99): INFO number of params: 73473448
+[2022-03-22 05:40:17 focal_tiny_patch4_window7_224] (main.py 129): INFO no checkpoint found in output/focal_tiny_patch4_window7_224/default, ignoring auto resume
+[2022-03-22 05:40:51 focal_tiny_patch4_window7_224] (main.py 300): INFO throughput averaged with 30 times
+[2022-03-22 05:41:06 focal_tiny_patch4_window7_224] (main.py 306): INFO batch_size 16 throughput 30.905376613402947

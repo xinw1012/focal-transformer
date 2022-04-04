@@ -1,0 +1,69 @@
+description: train clip model on google cc and sbu
+
+target:
+  vc: msrhyper
+  service: amlk8s
+  name: itphyperdgxcl1
+
+environment:
+  # image: pengchuanzhang/maskrcnn:py3.7-cuda10.0-pytorch1.4
+  # image: jwyang/videotransformer:cuda10.0-pytorch1.4-py3.7
+  # image: jw2yang/video:v0.2
+  image: jw2yang/video-pytorch1.7:v0.1
+
+storage:
+  test_data_storage:
+    storage_account_name: vlpdatasets
+    container_name: data
+  output_storage:
+    storage_account_name: projects4jw
+    container_name: phillytools
+
+code:
+  # local directory of the code. this will be uploaded to the server.
+  # $CONFIG_DIR is expanded to the directory of this config file
+  local_dir: ./
+
+search:
+  job_template:
+    name: train_swin_tiny_transformer
+    sku: G16
+    sku_count: 1
+    # aml_mpirun:
+    #   process_count_per_node: 1
+    #   # AML only supports: OpenMpi or IntelMpi
+    #   communicator: "OpenMpi"
+    command:
+    - ulimit -n 4096
+    - pip install timm antialiased-cnns bcolz ftfy regex tqdm
+    - pip install opencv-python==4.4.0.46 termcolor==1.1.0 yacs==0.1.8
+    - export MKL_SERVICE_FORCE_INTEL=1
+    - MKL_THREADING_LAYER=GNU python -m torch.distributed.launch --nproc_per_node {ngpus} --master_port 12345 main.py
+      --data-path /msrhyper-weka/msrhyper/jianwyan/datasets/imagenet
+      --batch-size {batch_size}
+      --output /mnt/output_storage/swin_tiny 
+      --tag {model_type}_bs{batch_size}_wsize{wsize}_pm{pool_method}
+      --cfg configs/swin_tiny_patch4_window{wsize}_224.yaml 
+      --opts MODEL.TYPE {model_type} MODEL.SWIN.POOL_METHOD {pool_method} MODEL.SWIN.WINDOW_RATIOS '[1, 1, 1, 1]'
+      --zip
+    submit_args:
+      container_args:
+        shm_size: 2048g
+  max_trials: 36
+  type: grid          
+  params:
+    - name: ngpus
+      spec: discrete
+      values: [16]  
+    - name: batch_size
+      spec: discrete
+      values: [64]
+    - name: wsize
+      spec: discrete
+      values: [7]
+    - name: model_type
+      spec: discrete
+      values: ['swinv1']      
+    - name: pool_method
+      spec: discrete
+      values: ['fc']         
